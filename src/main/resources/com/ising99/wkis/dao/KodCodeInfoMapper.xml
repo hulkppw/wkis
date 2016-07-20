@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.KodCodeInfoMapper">
+    <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.KodCodeInfo">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="mac" property="mac" jdbcType="VARCHAR"/>
+        <result column="sncode" property="sncode" jdbcType="VARCHAR"/>
+        <result column="hnuserid" property="hnuserid" jdbcType="VARCHAR"/>
+        <result column="stated" property="stated" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="getVo" resultMap="BaseResultMap" parameterType="com.ising99.wkis.domain.KodCodeInfo">
+     select * from t_kodcodeinfo where mac=#{mac} and sncode=#{sncode} and hnuserid=#{hnuserid} limit 1
+    </select>
+
+    <select id="isExists" resultMap="BaseResultMap" parameterType="com.ising99.wkis.domain.KodCodeInfo">
+       select * from t_kodcodeinfo where 1=1 and (mac=#{mac} or sncode=#{sncode} or hnuserid=#{hnuserid}) limit 1
+    </select>
+
+
+    <insert id="insert" parameterType="com.ising99.wkis.domain.KodCodeInfo">
+        <selectKey resultType="java.lang.Integer" order="AFTER"
+                   keyProperty="id">
+            SELECT LAST_INSERT_ID() AS ID
+        </selectKey>
+        insert into
+        t_kodcodeinfo(mac,sncode, hnuserid,stated)values
+        (#{mac},#{sncode},#{hnuserid},#{stated})
+    </insert>
+</mapper>

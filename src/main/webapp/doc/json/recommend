@@ -1,0 +1,38 @@
+[
+    {
+        "id": 13,
+        "title": "推荐111",
+        "icon": "/resource/devcenter/upload/icon/201405280123343469.jpg",
+        "appinfoid": 1,
+        "packageName": "com.eg.android.AlipayGphone",
+        "img": "/resource/app/upload/20140617/721dd438f72743c5973ca94ee5ae80db.png",
+        "tag": 1
+    },
+    {
+        "id": 14,
+        "title": "首页推22",
+        "icon": "",
+        "appinfoid": 2,
+        "packageName": "",
+        "img": "/resource/app/upload/20140617/6e5f00e349204b949166b60e233eb669.png",
+        "tag": 0
+    },
+    {
+        "id": 15,
+        "title": "首页推荐3",
+        "icon": "/resource/devcenter/upload/icon/201406091951058107.jpg",
+        "appinfoid": 3,
+        "packageName": "com.ising99.iMusic",
+        "img": "/resource/app/upload/20140617/0b33d69ec42546908802f7373ea8812a.png",
+        "tag": 0
+    },
+    {
+        "id": 16,
+        "title": "首页推荐4",
+        "icon": "/resource/devcenter/upload/icon/201405280123343469.jpg",
+        "appinfoid": 1,
+        "packageName": "com.eg.android.AlipayGphone",
+        "img": "",
+        "tag": 0
+    }
+]

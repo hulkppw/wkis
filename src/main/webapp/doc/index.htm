@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>爱唱API</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" media="screen">
+</head>
+<body class="mediawiki ltr sitedir-ltr B_wiki_main  skin-monobook">
+<!--主内容开始-->
+<div class="wiki_wrap">
+<div class="wiki_con">
+<div class="con_box">
+<div class="wiki_body">
+<div class="wiki_inner">
+<div class="main_content clearfix">
+<div class="wiki_bodyContent" id="bodyContent">
+<h1 id="firstHeading" class="firstHeading">爱唱API</h1>
+
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2 class="wiki_title">
+    <span class="mw-headline">爱唱API</span>
+</h2>
+
+<div class="wiki_kit">
+<p class="tips_txt">注：点击查看
+    <a href="#" title="接口初始化指南">接口初始化指南</a></p>
+
+<div class="wiki_taglist">
+    <ul class="clearfix">
+        <li>
+            <a href="#ydkg">云端K歌</a>
+        </li>
+        <li>
+            <a href="#syt">随意听接口</a>
+        </li>
+        <li>
+            <a href="#sytv2">随意听接口V2</a>
+        </li>
+        <li>
+            <a href="#pk">PK擂台接口</a>
+        </li>
+        <li>
+            <a href="#Multiscreen">多屏互动</a>
+        </li>
+        <li>
+            <a href="#ota">OTA接口</a>
+        </li>
+        <li>
+            <a href="#upload">上传接口</a>
+        </li>
+        <li>
+            <a href="#tv">TV APP中心接口</a>
+        </li>
+        <li>
+            <a href="#music">歌单接口</a>
+        </li>
+        <li>
+            <a href="#pk">云端PK接口</a>
+        </li>
+        <li>
+            <a href="#koic">条纹码接口</a>
+        </li>
+        <li>
+            <a href="#user">用户接口</a>
+        </li>
+    </ul>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+    <colgroup>
+        <col class="tbF1">
+        <col class="tbF2">
+        <col>
+    </colgroup>
+    <tbody>
+    <tr>
+        <th colspan="4" scope="col"><span id="ydkg">云端K歌</span>
+        </th>
+    </tr>
+    <tr>
+        <td rowspan="4" style="text-align:center;">读取接口
+        </td>
+        <td>
+            <a href="player/theme/ver.htm"
+               title="获取主题菜单版本" target="_blank">player/theme/ver</a>
+        </td>
+        <td>获取主题菜单版本
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="player/theme/list.htm"
+               title="获取主题列表" target="_blank">player/theme/list</a>
+        </td>
+        <td>获取主题列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="player/theme/music/ver.htm"
+               title="获取主题歌曲版本" target="_blank">player/theme/music/ver</a>
+        </td>
+        <td>获取主题歌曲版本
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="player/theme/music/list.htm"
+               title="获取主题歌曲列表" target="_blank">player/theme/music/list</a>
+        </td>
+        <td>获取主题歌曲列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+
+    </tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+    <colgroup>
+        <col class="tbF1">
+        <col class="tbF2">
+        <col>
+    </colgroup>
+    <tbody>
+    <tr>
+        <th colspan="4" scope="col"><span id="syt">随意听</span>
+        </th>
+    </tr>
+    <tr>
+        <td rowspan="8" style="text-align:center;">读取接口
+        </td>
+        <td>
+            <a href="imusic/ver.htm"
+               title="获取版本信息" target="_blank">imusic/ver</a>
+        </td>
+        <td>获取版本信息
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/channel.htm"
+               title="获取频道列表及相关信息" target="_blank">imusic/channel</a>
+        </td>
+        <td>获取频道列表及相关信息
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/channel/music.htm"
+               title="获取歌曲列表" target="_blank">imusic/channel/music</a>
+        </td>
+        <td>获取歌曲列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/bg.htm"
+               title="背景列表" target="_blank">imusic/bg</a>
+        </td>
+        <td>背景列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/instrument.htm"
+               title="乐器列表" target="_blank">imusic/instrument</a>
+        </td>
+        <td>乐器列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/scene.htm"
+               title="场景列表" target="_blank">imusic/scene</a>
+        </td>
+        <td>场景列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/like.htm"
+               title="喜欢（最爱）的列表" target="_blank">imusic/like</a>
+        </td>
+        <td>喜欢（最爱）列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/hate.htm"
+               title="不喜欢的列表" target="_blank">imusic/hate</a>
+        </td>
+        <td>不喜欢列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td rowspan="4" style="text-align:center;">写入接口
+        </td>
+        <td>
+            <a href="imusic/like/add.htm"
+               title="添加最爱" target="_blank">imusic/like/add</a>
+        </td>
+        <td>添加最爱
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/like/delete.htm"
+               title="删除最爱" target="_blank">imusic/like/delete</a>
+        </td>
+        <td>删除最爱
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/hate/add.htm"
+               title="添加不喜欢" target="_blank">imusic/hate/add</a>
+        </td>
+        <td>添加不喜欢
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/hate/delete.htm"
+               title="删除不喜欢" target="_blank">imusic/hate/delete</a>
+        </td>
+        <td>删除不喜欢
+        </td>
+        <td>HKIS</td>
+    </tr>
+    </tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+    <colgroup>
+        <col class="tbF1">
+        <col class="tbF2">
+        <col>
+    </colgroup>
+    <tbody>
+    <tr>
+        <th colspan="4" scope="col"><span id="sytv2">随意听V2</span>
+        </th>
+    </tr>
+    <tr>
+        <td rowspan="3" style="text-align:center;">读取接口
+        </td>
+        <td>
+            <a href="imusic/v2/channel/ver.htm"
+               title="获取频道版本信息" target="_blank">imusic/v2/channel/ver</a>
+        </td>
+        <td>获取频道版本信息</span>
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/v2/first_channel.htm"
+               title="获取第一层频道列表及相关信息" target="_blank">imusic/v2/first_channel</a>
+        </td>
+        <td>获取第一层频道列表及相关信息
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="imusic/v2/sub_channel.htm"
+               title="获取二三级频道列表及相关信息" target="_blank">imusic/v2/sub_channel</a>
+        </td>
+        <td>获取二三级频道列表及相关信息
+        </td>
+        <td>HKIS</td>
+    </tr>
+    </tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+    <colgroup>
+        <col class="tbF1">
+        <col class="tbF2">
+        <col>
+    </colgroup>
+    <tbody>
+    <tr>
+        <th colspan="4" scope="col"><span id="Multiscreen">多屏互动</span>
+        </th>
+    </tr>
+    <tr>
+        <td rowspan="8" style="text-align:center;">读取接口
+        </td>
+        <td>
+            <a href="multiscreen/ising/login.htm"
+               title="爱唱用户登陆" target="_blank">multiscreen/ising/login</a>
+        </td>
+        <td>爱唱用户登陆
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/login.htm"
+               title="第三方登陆" target="_blank">multiscreen/login</a>
+        </td>
+        <td>第三方登陆
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/userinfo.htm"
+               title="获取用户信息" target="_blank">multiscreen/userinfo</a>
+        </td>
+        <td>获取用户信息
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/wish/notice.htm"
+               title="上架通知" target="_blank">multiscreen/wish/notice</a>
+        </td>
+        <td>上架通知
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/theme.htm"
+               title="获取主题" target="_blank">multiscreen/theme</a>
+        </td>
+        <td>获取主题
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/theme/musiclist.htm"
+               title="获取主题" target="_blank">multiscreen/theme/musiclist</a>
+        </td>
+        <td>获取主题歌曲
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/favorite.htm"
+               title="获取我的收藏" target="_blank">multiscreen/favorite</a>
+        </td>
+        <td>获取我的收藏
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/mixer.htm"
+               title="获取我的调音台信息" target="_blank">multiscreen/mixer</a>
+        </td>
+        <td>获取我的调音台信息
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td rowspan="5" style="text-align:center;">写入接口
+        </td>
+        <td>
+            <a href="multiscreen/userinfo/update.htm"
+               title="更新用户资料" target="_blank">multiscreen/userinfo/update</a>
+        </td>
+        <td>更新用户资料
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/wish/add.htm"
+               title="提交我的心愿歌单" target="_blank">multiscreen/wish/add</a>
+        </td>
+        <td>提交我的心愿歌单
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/favorite/add.htm"
+               title="添加我收藏的歌曲" target="_blank">multiscreen/favorite/add</a>
+        </td>
+        <td>添加我收藏的歌曲
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/favorite/delete.htm"
+               title="删除我收藏的歌曲" target="_blank">multiscreen/favorite/delete</a>
+        </td>
+        <td>删除我收藏的歌曲
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="multiscreen/mixer/update.htm"
+               title="更新我的调音台信息" target="_blank">multiscreen/mixer/update</a>
+        </td>
+        <td>更新我的调音台信息
+        </td>
+        <td>HKIS</td>
+    </tr>
+    </tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+    <colgroup>
+        <col class="tbF1">
+        <col class="tbF2">
+        <col>
+    </colgroup>
+    <tbody>
+    <tr>
+        <th colspan="4" scope="col"><span id="ota">OTA</span>
+        </th>
+    </tr>
+    <tr>
+        <td rowspan="2" style="text-align:center;">读取接口
+        </td>
+        <td>
+            <a href="ota/os.htm"
+               title="获取操作系统更新信息" target="_blank">ota/os</a>
+        </td>
+        <td>获取操作系统更新信息
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="ota/osresources.htm"
+               title="获取操作系统资源列表" target="_blank">ota/osresources</a>
+        </td>
+        <td>获取操作系统资源列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td rowspan="2" style="text-align:center;">写入接口
+        </td>
+        <td>
+            <a href="ota/statistics/os.htm"
+               title="操作系统下载统计" target="_blank">ota/statistics/os</a>
+        </td>
+        <td>操作系统下载统计
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="ota/statistics/osresources.htm"
+               title="操作系统资源下载统计">ota/statistics/osresources</a>
+        </td>
+        <td>操作系统资源下载统计
+        </td>
+        <td>HKIS</td>
+    </tr>
+    </tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+    <colgroup>
+        <col class="tbF1">
+        <col class="tbF2">
+        <col>
+    </colgroup>
+    <tbody>
+    <tr>
+        <th colspan="4" scope="col"><span id="upload">上传接口</span>
+        </th>
+    </tr>
+    <tr>
+        <td rowspan="1" style="text-align:center;">读取接口
+        </td>
+        <td>
+            <a href="file/info.htm"
+               title="获取文件信息" target="_blank">file/info</a>
+        </td>
+        <td>获取文件信息
+        </td>
+        <td>KUS</td>
+    </tr>
+    <tr>
+        <td rowspan="3" style="text-align:center;">写入接口
+        </td>
+        <td>
+            <a href="file/upload.htm"
+               title="上传文件接口" target="_blank">file/upload</a>
+        </td>
+        <td>上传文件接口
+        </td>
+        <td>KUS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="file/multi_upload.htm"
+               title="同时上传多个文件">file/multi_upload</a>
+        </td>
+        <td>同时上传多个文件
+        </td>
+        <td>KUS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="file/delete.htm"
+               title="删除文件接口">file/delete</a>
+        </td>
+        <td>删除文件接口
+        </td>
+        <td>KUS</td>
+    </tr>
+    </tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+    <colgroup>
+        <col class="tbF1">
+        <col class="tbF2">
+        <col>
+    </colgroup>
+    <tbody>
+    <tr>
+        <th colspan="4" scope="col"><span id="tv">TV APP中心</span>
+        </th>
+    </tr>
+    <tr>
+        <td rowspan="6" style="text-align:center;">读取接口
+        </td>
+        <td>
+            <a href="app/tv/column/ver.htm"
+               title="获取TV APP栏目版本" target="_blank">app/tv/column/ver</a>
+        </td>
+        <td>获取TV APP栏目版本
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="app/tv/column/recommend.htm"
+               title="获取TV APP推荐列表" target="_blank">app/tv/column/recommend</a>
+        </td>
+        <td>获取TV APP推荐列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="app/tv/column/category.htm"
+               title="获取TV APP分类列表" target="_blank">app/tv/column/category</a>
+        </td>
+        <td>获取TV APP分类列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="app/tv/apps.htm"
+               title="获取TV APP列表" target="_blank">app/tv/apps</a>
+        </td>
+        <td>获取TV APP列表
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="app/tv/appinfo.htm"
+               title="获取TV APP信息" target="_blank">app/tv/appinfo</a>
+        </td>
+        <td>获取TV APP信息
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="app/tv/appver.htm"
+               title="获取TV APP版本信息" target="_blank">app/tv/appver</a>
+        </td>
+        <td>获取TV APP版本信息
+        </td>
+        <td>HKIS</td>
+    </tr>
+    <tr>
+        <td rowspan="1" style="text-align:center;">写入接口
+        </td>
+        <td>
+            <a href="app/tv/statistics.htm"
+               title="TV APP下载统计" target="_blank">app/tv/statistics</a>
+        </td>
+        <td>APP下载统计
+        </td>
+        <td>HKIS</td>
+    </tr>
+    </tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+    <colgroup>
+        <col class="tbF1">
+        <col class="tbF2">
+        <col>
+    </colgroup>
+    <tbody>
+    <tr>
+        <th colspan="4" scope="col"><span id="music">歌单接口</span>
+        </th>
+    </tr>
+    <tr>
+        <td rowspan="9" style="text-align:center;">读取接口
+        </td>
+        <td>
+            <a href="wkds/musiclist.htm"
+               title="获取歌单" target="_blank">musiclist</a>
+        </td>
+        <td>获取歌单
+        </td>
+        <td>HKDS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="wkds/musicinfo.htm"
+               title="获取歌曲信息" target="_blank">musicinfo</a>
+        </td>
+        <td>获取歌曲信息
+        </td>
+        <td>HKDS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="wkds/singerlist.htm"
+               title="获取歌手" target="_blank">singerlist</a>
+        </td>
+        <td>获取歌手
+        </td>
+        <td>HKDS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="wkds/mic.htm"
+               title="获取mic文件" target="_blank">mic</a>
+        </td>
+        <td>获取mic文件
+        </td>
+        <td>HKDS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="wkds/is9.htm"
+               title="获取is9文件" target="_blank">is9</a>
+        </td>
+        <td>获取is9文件
+        </td>
+        <td>HKDS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="wkds/ver.htm"
+               title="获取歌单版本号" target="_blank">ver</a>
+        </td>
+        <td>获取歌单版本号
+        </td>
+        <td>HKDS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="wkds/firstworddb.htm"
+               title="获取首字数据库文件" target="_blank">firstworddb</a>
+        </td>
+        <td>获取首字数据库文件
+        </td>
+        <td>HKDS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="wkds/random.htm"
+               title="获取随即播放列表" target="_blank">random</a>
+        </td>
+        <td>获取随即播放列表
+        </td>
+        <td>HKDS</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="wkds/pitchmusiclist.htm"
+               title="通过定调信息获取歌曲列表" target="_blank">musiclist_by_pitch</a>
+        </td>
+        <td>通过定调信息获取歌曲列表
+        </td>
+        <td>HKDS</td>
+    </tr>
+
+    </tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+<colgroup>
+    <col class="tbF1">
+    <col class="tbF2">
+    <col>
+</colgroup>
+<tbody>
+<tr>
+    <th colspan="4" scope="col"><span id="pk">云端PK接口</span>
+    </th>
+</tr>
+<tr>
+    <td rowspan="21" style="text-align:center;">读取接口
+    </td>
+    <td>
+        <a href="pk/star.htm"
+           title="获取pk之星" target="_blank">pk/star</a>
+    </td>
+    <td>获取pk之星
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/top.htm"
+           title="本期排行（通过擂台歌曲编号获取）" target="_blank">pk/top</a>
+    </td>
+    <td>本期排行（通过擂台歌曲编号获取）
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/top_by_arena.htm"
+           title="本期排行（通过擂台编号获取）" target="_blank">pk/top_by_arena</a>
+    </td>
+    <td>本期排行（通过擂台编号获取）
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/nickname.htm"
+           title="默认昵称列表" target="_blank">pk/nickname</a>
+    </td>
+    <td>默认昵称列表
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/head.htm"
+           title="默认头像列表" target="_blank">pk/head</a>
+    </td>
+    <td>默认头像列表
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/songinfo.htm"
+           title="歌曲信息" target="_blank">pk/singer/songinfo</a>
+    </td>
+    <td>歌曲信息
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/songlist.htm"
+           title="歌手作品" target="_blank">pk/singer/songlist</a>
+    </td>
+    <td>歌手作品
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/list/basic.htm"
+           title="本机歌手（基本）" target="_blank">pk/singer/list/basic</a>
+    </td>
+    <td>本机歌手（基本）
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/list/more.htm"
+           title="本机歌手（详细）" target="_blank">pk/singer/list/more</a>
+    </td>
+    <td>本机歌手（详细）
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/upload/weburl.htm"
+           title="获取网页上传地址" target="_blank">pk/singer/upload/weburl</a>
+    </td>
+    <td>获取网页上传地址
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/upload/web/check.htm"
+           title="检查上传进度" target="_blank">pk/singer/upload/web/check</a>
+    </td>
+    <td>检查上传进度
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/head/update.htm"
+           title="更新用户头像" target="_blank">pk/singer/head/update</a>
+    </td>
+    <td>更新用户头像
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/info.htm"
+           title="获取歌手信息" target="_blank">pk/singer/info</a>
+    </td>
+    <td>获取歌手信息
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/song/ranking_by_score.htm"
+           title="通过得分获取排名" target="_blank">pk/singer/song/ranking_by_score</a>
+    </td>
+    <td>通过得分获取排名
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/song/topscore.htm"
+           title="获取歌曲的最高分" target="_blank">pk/singer/song/topscore</a>
+    </td>
+    <td>获取歌曲的最高分
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/song/delete.htm"
+           title="删除歌手歌曲" target="_blank">pk/singer/song/delete</a>
+    </td>
+    <td>删除歌手歌曲
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/song/deleteall.htm"
+           title="删除歌手全部歌曲" target="_blank">pk/singer/song/deleteall</a>
+    </td>
+    <td>删除歌手全部歌曲
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/arena.htm"
+           title="热门擂台" target="_blank">pk/arena</a>
+    </td>
+    <td>热门擂台
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/arena/songlist.htm"
+           title="获取擂台歌曲列表" target="_blank">pk/arena/songlist</a>
+    </td>
+    <td>获取擂台歌曲列表
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/arena/songinfo.htm"
+           title="获取擂台歌曲信息" target="_blank">pk/arena/songinfo</a>
+    </td>
+    <td>获取擂台歌曲信息
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/arena/song/expired.htm"
+           title="检查擂台歌曲是否过期" target="_blank">pk/arena/song/expired</a>
+    </td>
+    <td>检查擂台歌曲是否过期
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td rowspan="6" style="text-align:center;">写入接口
+    </td>
+    <td>
+        <a href="pk/singer/add.htm"
+           title="添加歌手" target="_blank">pk/singer/add</a>
+    </td>
+    <td>添加歌手
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/song/add.htm"
+           title="上传作品" target="_blank">pk/singer/song/add</a>
+    </td>
+    <td>上传作品
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/delete.htm"
+           title="删除昵称(删除歌手)" target="_blank">pk/singer/delete</a>
+    </td>
+    <td>删除昵称（删除歌手）
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/deleteall.htm"
+           title="删除全部歌手" target="_blank">pk/singer/deleteall</a>
+    </td>
+    <td>删除全部歌手
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/singer/cancel.htm"
+           title="取消添加歌手" target="_blank">pk/singer/cancel</a>
+    </td>
+    <td>取消添加歌手
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/record/like.htm"
+           title="点赞记录" target="_blank">pk/record/like</a>
+    </td>
+    <td>点赞记录
+    </td>
+    <td>HKIS</td>
+</tr>
+<tr>
+    <td>
+        <a href="pk/record/listen.htm"
+           title="试听记录" target="_blank">pk/record/listen</a>
+    </td>
+    <td>试听记录
+    </td>
+    <td>HKIS</td>
+</tr>
+</tbody>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+    <colgroup>
+        <col class="tbF1">
+        <col class="tbF2">
+        <col>
+    </colgroup>
+    <tbody>
+    <tr>
+        <th colspan="4" scope="col"><span id="koic">条纹码接口</span>
+        </th>
+    </tr>
+    <tr>
+        <td rowspan="1" style="text-align:center;">读取接口
+        </td>
+        <td>
+            <a href="koic/voinfo.htm"
+               title="判断条纹码，SN号，MAC一组数据是否存在" target="_blank">koic/vo</a>
+        </td>
+        <td>判断条纹码，SN号，MAC一组数据是否存在
+        </td>
+        <td>HKIS</td>
+    </tr>
+
+    <tr>
+        <td rowspan="1" style="text-align:center;">写入接口
+        </td>
+        <td>
+            <a href="koic/add.htm"
+               title="将条纹码，SN号，MAC一组数据存入数据库" target="_blank">koic/add</a>
+        </td>
+        <td>将条纹码，SN号，MAC一组数据存入数据库
+        </td>
+        <td>HKIS</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+   <!-- 用户登录 -->
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="wiki_table">
+        <colgroup>
+            <col class="tbF1">
+            <col class="tbF2">
+            <col>
+        </colgroup>
+        <tbody>
+        <tr>
+            <th colspan="4" scope="col"><span id="user">用户接口</span>
+            </th>
+        </tr>
+        <tr>
+            <td rowspan="1" style="text-align:center;">用户登录验证
+            </td>
+            <td>
+                <a href="user/login.html"
+                   title="用户登录验证" target="_blank">user/login</a>
+            </td>
+            <td>用户登录验证
+            </td>
+            <td>HKIS</td>
+        </tr>
+
+
+        </tbody>
+    </table>
+
+
+</div>
+</div>
+<div id="catlinks" class="catlinks catlinks-allhidden"></div>
+<div class="wiki_plus_area"> 文档更新时间: 2014-04-22</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

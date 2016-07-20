@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://open.weibo.com/wiki/Error_code -->
+<html lang="zh-cn" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Error code - 微博API</title>
+<link rel="stylesheet" href="http://open.weibo.com/wiki/load.php?debug=false&lang=zh-cn&modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&only=styles&skin=monobook&*">
+<link rel="stylesheet" href="http://img.t.sinajs.cn/t4/appstyle/open/css/pages/wiki/wiki_main_lumpsugar.css?version=1.1.2.358" media="screen">
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/wiki/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/wiki/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><style type="text/css" media="all">.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+
+/* cache key: wiki:resourceloader:filter:minify-css:4:4250852ed2349a0d4d0fc6509a3e7d4c */
+</style><style type="text/css" media="all">.js-messagebox{margin:1em 5%;padding:0.5em 2.5%;border:1px solid #ccc;background-color:#fcfcfc;font-size:0.8em}.js-messagebox .js-messagebox-group{margin:1px;padding:0.5em 2.5%;border-bottom:1px solid #ddd}.js-messagebox .js-messagebox-group:last-child{border-bottom:thin none transparent}
+
+/* cache key: wiki:resourceloader:filter:minify-css:4:8b08bdc91c52a9ffba396dccfb5b473c */
+</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: wiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script type="text/javascript" charset="utf-8" async="" src="./Error code - 微博API_files/suda.js"></script><script src="./Error code - 微博API_files/load.php"></script><script src="./Error code - 微博API_files/load(1).php"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Error_code", "wgTitle": "Error code", "wgCurRevisionId": 12276, "wgArticleId": 769, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script><script type="text/javascript" src="./Error code - 微博API_files/load(2).php"></script>
+<style type="text/css" adt="123"></style><script>(function() {
+    Function.prototype.bind = function() {
+        var fn = this, args = Array.prototype.slice.call(arguments), obj = args.shift();
+        return function() {
+            return fn.apply(obj, args.concat(Array.prototype.slice.call(arguments)));
+        };
+    };
+    function A() {}
+    A.prototype = {
+        rules: {
+            'youku_loader': {
+                'find': /^http:\/\/static\.youku\.com\/.*(loader|player_.*)(_taobao)?\.swf/,
+                'replace': 'http://adtchrome.qiniudn.com/youku_20140420.swf'
+            },
+            'youku_out': {
+                'find': /^http:\/\/player\.youku\.com\/player\.php\/sid\/(.*)/,
+                'replace': 'http://adtchrome.qiniudn.com/youku_20140420.swf?VideoIDS=$1'
+            },
+            'iqiyi': {
+                'find':/^http:\/\/www\.iqiyi\.com\/player\/\d+\/Player\.swf$/,
+                'replace':'http://adtchrome.qiniudn.com/iqiyi_20140420.swf'
+            },
+            'pps':{
+                'find':/^http:\/\/www\.iqiyi\.com\/player\/cupid\/common\/pps_flvplay_s\.swf/,
+                'replace':'http://adtchrome.qiniudn.com/pps_20140420.swf'
+            },
+            'pps_iqiyi':{
+                'find':/^http:\/\/www\.iqiyi\.com\/player\/\d+\/Player\.swf\?/,
+                'replace':'http://adtchrome.qiniudn.com/pps_iqiyi_20140420.swf?'
+            },
+            'bilibili_iqiyi': {
+                'find':/^http:\/\/www\.bilibili\.tv\/iqiyi\.swf$/,
+                'replace':'http://adtchrome.qiniudn.com/bilibili_iqiyi_20140420.swf'
+            },
+            'letv':{
+                'find':/^http:\/\/player\.letvcdn\.com\/p\/.*\/newplayer\/LetvPlayer\.swf/,
+                'replace':'http://adtchrome.qiniudn.com/letv_20140504.swf'
+            },
+            'letv_zhuanti':{
+                'find':/^http:\/\/player\.hz\.letv\.com\/hzplayer\.swf\/v_list=(.*)/,
+                'replace':'http://adtchrome.qiniudn.com/letv_20140504.swf?camera=0&v_list=$1'
+            },
+            'ku6':{
+                'find':/^http:\/\/player\.ku6cdn\.com\/default\/.*\/\d+\/(v|player|loader)\.swf/,
+                'replace':'http://adtchrome.qiniudn.com/ku6_20140420.swf'
+            },
+            'ku6_topic':{
+                'find':/^http:\/\/player\.ku6\.com\/inside\/.*\/v\.swf/,
+                'replace':'http://adtchrome.qiniudn.com/ku6_20140420.swf'
+            }
+        },
+        _done: null,
+        get done() {
+            if(!this._done) {
+                this._done = new Array();
+            }
+            return this._done;
+        },
+        addAnimations: function() {
+            var style = document.createElement('style');
+            style.type = 'text/css';
+            style.innerHTML = 'object,embed{\
+-webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;\
+-ms-animation-duration:.001s;-ms-animation-name:playerInserted;\
+-o-animation-duration:.001s;-o-animation-name:playerInserted;\
+animation-duration:.001s;animation-name:playerInserted;}\
+@-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+@-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+@-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+@keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}';
+            document.getElementsByTagName('head')[0].appendChild(style);
+        },
+        animationsHandler: function(e) {
+            if(e.animationName === 'playerInserted') {
+                this.replace(e.target);
+            }
+        },
+        replace: function(elem) {
+            if(this.done.indexOf(elem) != -1) return;
+            this.done.push(elem);
+            var player = elem.data || elem.src;
+            if(!player) return;
+            var i, find, replace = false;
+            for(i in this.rules) {
+                find = this.rules[i]['find'];
+                if(find.test(player)) {
+                    replace = this.rules[i]['replace'];
+                    if('function' === typeof this.rules[i]['preHandle']) {
+                        this.rules[i]['preHandle'].bind(this, elem, find, replace, player)();
+                    }else{
+                        this.reallyReplace.bind(this, elem, find, replace)();
+                    }
+                    break;
+                }
+            }
+        },
+        reallyReplace: function(elem, find, replace) {
+            elem.data && (elem.data = elem.data.replace(find, replace)) || elem.src && ((elem.src = elem.src.replace(find, replace)) && (elem.style.display = 'block'));
+            var b = elem.querySelector("param[name='movie']");
+            this.reloadPlugin(elem);
+        },
+        reloadPlugin: function(elem) {
+            var nextSibling = elem.nextSibling;
+            var parentNode = elem.parentNode;
+            parentNode.removeChild(elem);
+            var newElem = elem.cloneNode(true);
+            this.done.push(newElem);
+            if(nextSibling) {
+                parentNode.insertBefore(newElem, nextSibling);
+            } else {
+                parentNode.appendChild(newElem);
+            }
+        },
+        init: function() {
+            var handler = this.animationsHandler.bind(this);
+            document.body.addEventListener('webkitAnimationStart', handler, false);
+            document.body.addEventListener('msAnimationStart', handler, false);
+            document.body.addEventListener('oAnimationStart', handler, false);
+            document.body.addEventListener('animationstart', handler, false);
+            this.addAnimations();
+        }
+    };
+    new A().init();
+})();
+</script><style type="text/css">object,embed{-webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;-ms-animation-duration:.001s;-ms-animation-name:playerInserted;-o-animation-duration:.001s;-o-animation-name:playerInserted;animation-duration:.001s;animation-name:playerInserted;}@-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}@-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}@-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}@keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style></head>
+<body class="mediawiki ltr sitedir-ltr B_wiki_main  skin-monobook" youdao="bind">
+
+
+<div class="op_header" id="pl_web_top">
+    <div class="global_top_header">
+	    <div class="header_inner">
+	        <div class="header_wrapper">
+	            <div class="logo_container">
+	                <a class="logo_link" href="http://open.weibo.com/" title="进入首页"><img class="logo_img" src="./Error code - 微博API_files/transparent.gif" alt="Weibo Platform Logo"></a>
+	                <h1 class="hidden_title">微博开放平台</h1>
+	            </div>
+	            <div class="nav_list_container">
+	                <ul class="nav_list">
+	                    <li class="nav_item nav_item_more nav_more_mouseover2">
+	                        <a class="nav_link" action-type="selection_btn" action-data="index=1" href="http://open.weibo.com/development" title="">微连接<i class="mark_more_arrow"></i></a>
+	                        <div class="nav_more_layer" action-type="selection_menu" action-data="index=1">
+	                            <div class="nav_more_link_container">
+	                                <div class="more_link_line"><a class="nav_more_link" href="http://open.weibo.com/development/mobile" title="">移动应用</a></div>
+	                                <div class="more_link_line"><a class="nav_more_link" href="http://open.weibo.com/connect" title="">网站接入</a></div>
+	                                <div class="more_link_line"><a class="nav_more_link" href="http://open.weibo.com/development/canvas" title="">站内应用</a></div>
+	                            </div>
+	                        </div>
+	                    </li>
+	                    <li class="nav_item nav_item_more nav_more_mouseover2">
+	                        <a class="nav_link" action-type="selection_btn" action-data="index=2" href="http://open.weibo.com/service" title="">微服务<i class="mark_more_arrow"></i></a>
+	                        <div class="nav_more_layer" action-type="selection_menu" action-data="index=2">
+	                            <div class="nav_more_link_container">
+	                                <div class="more_link_line"><a class="nav_more_link" href="http://open.weibo.com/development/pro" title="">PAGE应用</a></div>
+	                            </div>
+	                        </div>
+	                    </li>
+	                    <li class="nav_item nav_current">
+	                        <a class="nav_link" href="http://open.weibo.com/wiki/" title="">文档</a>
+	                    </li>
+	                    <li class="nav_item">
+	                        <a class="nav_link" href="http://open.weibo.com/support" title="">支持</a>
+	                    </li>
+	                    <li class="nav_item">
+	                        <a class="nav_link" node-type="manage_center" href="javascript:void(0);" {="" hidefocus="true" title="">管理中心</a>
+	                    </li>
+	                </ul>
+	            </div>
+	            <!--登录Start-->
+	            <div class="pull_right">
+	                                    <div class="login_link_container">
+                    	<a class="login_link" node-type="login_btn" href="javascript:;" title="">登录</a>
+                    </div>
+	                	            </div>
+	            <!--登录End-->
+	        </div>
+	    </div>
+	</div>
+</div>
+
+<!--主内容开始-->
+<div class="wiki_wrap">
+	<div class="wiki_con">
+    	<div class="con_box">
+        	<div class="header noprint">
+            	<a href="http://open.weibo.com/wiki/" title="开发文档" class="wiki_logo">开发文档</a>
+            </div>
+            <div class="wiki_body">
+            	<div class="wiki_inner">
+					                	<div class="main_content clearfix">
+                		<div class="wiki_side noprint">
+                        	<!--左侧导航-->
+							<div id="pl_web_wikiNav" class="wiki_nav">
+                                <form class="nav_search clearfix" action="http://open.weibo.com/wiki/index.php">
+                                    <input type="hidden" name="title" value="特殊:搜索">
+                                    <span class="input_wrap"><input name="search" title="在微博API中搜索 [alt-f]" accesskey="f" class="ser_input" node-txt="搜索" node-type="search"></span>
+                                    <input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" class="search_btn">                                </form>
+                                <ul class="nav_list">
+									<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/%E9%A6%96%E9%A1%B5"><em class="wiki_icon icon_首页"></em><span class="txt">首页</span>	</a></h3>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/Error_code#" onclick="return false;"><em class="wiki_icon icon_AppInfo"></em><span class="txt">平台概述</span><em class="nav_arr"></em>	</a></h3>	<ul class="child_list" style="display:none;"><li id="n-.E6.A6.82.E8.BF.B0" class="n_sub"><a href="http://open.weibo.com/wiki/%E6%A6%82%E8%BF%B0">概述</a></li><li id="n-.E5.B9.B3.E5.8F.B0.E5.85.AC.E7.BA.A6" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%B9%B3%E5%8F%B0%E5%85%AC%E7%BA%A6">平台公约</a></li><li id="n-.E6.96.B0.E6.89.8B.E6.8C.87.E5.8D.97" class="n_sub"><a href="http://open.weibo.com/wiki/%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97">新手指南</a></li>	</ul>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/Error_code#" onclick="return false;"><em class="wiki_icon icon_wkDoc"></em><span class="txt">政策规范</span><em class="nav_arr"></em>	</a></h3>	<ul class="child_list" style="display:none;"><li id="n-.E5.BC.80.E5.8F.91.E8.80.85.E5.8D.8F.E8.AE.AE" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BC%80%E5%8F%91%E8%80%85%E5%8D%8F%E8%AE%AE">开发者协议</a></li><li id="n-.E8.BF.90.E8.90.A5.E7.AE.A1.E7.90.86.E8.A7.84.E8.8C.83" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BA%94%E7%94%A8%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83">运营管理规范</a></li><li id="n-.E5.BE.AE.E8.BF.9E.E6.8E.A5.E5.88.86.E7.BA.A7.E7.AE.A1.E7.90.86.E5.8A.9E.E6.B3.95" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BE%AE%E8%BF%9E%E6%8E%A5%E5%90%88%E4%BD%9C%E4%BC%99%E4%BC%B4%E5%88%86%E7%BA%A7%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95">微连接分级管理办法</a></li><li id="n-.E5.AE.A1.E6.A0.B8.E6.8C.87.E5.8D.97.E4.B8.8E.E6.B5.81.E7.A8.8B" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BA%94%E7%94%A8%E5%AE%A1%E6%A0%B8%E4%BA%A7%E5%93%81%E6%8C%87%E5%8D%97">审核指南与流程</a></li><li id="n-.E5.BA.94.E7.94.A8.E5.AE.89.E5.85.A8.E5.BC.80.E5.8F.91.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">应用安全开发注意事项</a></li><li id="n-.E5.B9.B3.E5.8F.B0.E5.BA.94.E7.94.A8.E8.AE.BE.E8.AE.A1.E8.A7.84.E8.8C.83" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BA%94%E7%94%A8%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83">平台应用设计规范</a></li>	</ul>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/Error_code#" onclick="return false;"><em class="wiki_icon icon_wkDoc"></em><span class="txt">微博登录</span><em class="nav_arr"></em>	</a></h3>	<ul class="child_list" style="display:none;"><li id="n-.E6.8E.88.E6.9D.83.E6.9C.BA.E5.88.B6" class="n_sub"><a href="http://open.weibo.com/wiki/%E6%8E%88%E6%9D%83%E6%9C%BA%E5%88%B6">授权机制</a></li>	</ul>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/Error_code#" onclick="return false;"><em class="wiki_icon icon_wkDoc"></em><span class="txt">移动应用</span><em class="nav_arr"></em>	</a></h3>	<ul class="child_list" style="display:none;"><li id="n-.E7.A7.BB.E5.8A.A8.E5.BA.94.E7.94.A8.E4.BB.8B.E7.BB.8D" class="n_sub"><a href="http://open.weibo.com/wiki/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E4%BB%8B%E7%BB%8D">移动应用介绍</a></li><li id="n-.E7.A7.BB.E5.8A.A8.E5.BA.94.E7.94.A8SSO.E6.8E.88.E6.9D.83" class="n_sub"><a href="http://open.weibo.com/wiki/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8SSO%E6%8E%88%E6%9D%83">移动应用SSO授权</a></li>	</ul>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/Error_code#" onclick="return false;"><em class="wiki_icon icon_wkDoc"></em><span class="txt">网站接入</span><em class="nav_arr"></em>	</a></h3>	<ul class="child_list" style="display:none;"><li id="n-.E7.BD.91.E7.AB.99.E6.8E.A5.E5.85.A5.E4.BB.8B.E7.BB.8D" class="n_sub"><a href="http://open.weibo.com/wiki/%E7%BD%91%E7%AB%99%E6%8E%A5%E5%85%A5%E4%BB%8B%E7%BB%8D">网站接入介绍</a></li><li id="n-Weibo-Meta-Tags" class="n_sub"><a href="http://open.weibo.com/wiki/Weibo_meta_tag">Weibo Meta Tags</a></li><li id="n-.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98" class="n_sub"><a href="http://open.weibo.com/wiki/%E7%BD%91%E7%AB%99%E6%8E%A5%E5%85%A5%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">常见问题</a></li>	</ul>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/Error_code#" onclick="return false;"><em class="wiki_icon icon_wkDoc"></em><span class="txt">微服务</span><em class="nav_arr"></em>	</a></h3>	<ul class="child_list" style="display:none;"><li id="n-.E8.87.AA.E5.8A.A9.E6.8E.A5.E5.85.A5.E6.8C.87.E5.8D.97" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97">自助接入指南</a></li><li id="n-Page.E5.BA.94.E7.94.A8" class="n_sub"><a href="http://open.weibo.com/wiki/Page%E5%BA%94%E7%94%A8">Page应用</a></li><li id="n-.E5.95.86.E4.B8.9A.E6.95.B0.E6.8D.AEAPI" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%95%86%E4%B8%9A%E6%95%B0%E6%8D%AEAPI">商业数据API</a></li><li id="n-.E8.AE.A2.E9.98.85.E6.9C.8D.E5.8A.A1.E6.89.8B.E5.86.8C" class="n_sub"><a href="http://open.weibo.com/wiki/%E8%AE%A2%E9%98%85%E6%9C%8D%E5%8A%A1%E6%89%8B%E5%86%8C">订阅服务手册</a></li><li id="n-Subscription-Service-Guide" class="n_sub"><a href="http://open.weibo.com/wiki/Subscription_Service_User%27s_Guide">Subscription Service Guide</a></li>	</ul>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/Error_code#" onclick="return false;"><em class="wiki_icon icon_wkDoc"></em><span class="txt">粉丝服务平台</span><em class="nav_arr"></em>	</a></h3>	<ul class="child_list" style="display:none;"><li id="n-.E7.B2.89.E4.B8.9D.E6.9C.8D.E5.8A.A1.E5.B9.B3.E5.8F.B0" class="n_sub"><a href="http://open.weibo.com/wiki/%E7%B2%89%E4%B8%9D%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0">粉丝服务平台</a></li><li id="n-.E6.96.B0.E6.89.8B.E6.8E.A5.E5.85.A5.E6.8C.87.E5.8D.97" class="n_sub"><a href="http://open.weibo.com/wiki/Messages_api_start">新手接入指南</a></li><li id="n-.E5.BE.AE.E4.BF.A1.E5.BC.80.E5.8F.91.E8.80.85.E8.BF.81.E7.A7.BB.E6.8C.87.E5.8D.97" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97">微信开发者迁移指南</a></li><li id="n-.E6.8E.A5.E6.94.B6.E6.B6.88.E6.81.AF" class="n_sub"><a href="http://open.weibo.com/wiki/%E6%8E%A5%E6%94%B6%E6%B6%88%E6%81%AF">接收消息</a></li><li id="n-.E5.8F.91.E9.80.81.E6.B6.88.E6.81.AF" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF">发送消息</a></li><li id="n-.E7.94.9F.E6.88.90.E5.B8.A6.E5.8F.82.E6.95.B0.E7.9A.84.E4.BA.8C.E7.BB.B4.E7.A0.81" class="n_sub"><a href="http://open.weibo.com/wiki/%E7%94%9F%E6%88%90%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E4%BA%8C%E7%BB%B4%E7%A0%81">生成带参数的二维码</a></li>	</ul>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/Error_code#" onclick="return false;"><em class="wiki_icon icon_wkDoc"></em><span class="txt">API</span><em class="nav_arr"></em>	</a></h3>	<ul class="child_list" style="display:none;"><li id="n-.E5.BE.AE.E5.8D.9AAPI" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9AAPI">微博API</a></li><li id="n-API.E6.9B.B4.E6.96.B0.E6.97.A5.E5.BF.97" class="n_sub"><a href="http://open.weibo.com/wiki/API%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97">API更新日志</a></li><li id="n-.E6.8E.A5.E5.8F.A3.E8.AE.BF.E9.97.AE.E9.A2.91.E6.AC.A1.E6.9D.83.E9.99.90" class="n_sub"><a href="http://open.weibo.com/wiki/%E6%8E%A5%E5%8F%A3%E8%AE%BF%E9%97%AE%E9%A2%91%E6%AC%A1%E6%9D%83%E9%99%90">接口访问频次权限</a></li><li id="n-API.E6.B5.8B.E8.AF.95.E5.B7.A5.E5.85.B7" class="n_sub"><a href="http://open.weibo.com/wiki/API%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7">API测试工具</a></li><li id="n-.E6.96.B0.E7.89.88.E6.8E.A5.E5.8F.A3.E8.BF.81.E7.A7.BB.E6.8C.87.E5.8D.97" class="n_sub"><a href="http://open.weibo.com/wiki/V1_To_V2">新版接口迁移指南</a></li>	</ul>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/SDK"><em class="wiki_icon icon_wkDoc"></em><span class="txt">SDK</span>	</a></h3>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/Error_code#" onclick="return false;"><em class="wiki_icon icon_wkDoc"></em><span class="txt">支付接入</span><em class="nav_arr"></em>	</a></h3>	<ul class="child_list" style="display:none;"><li id="n-.E5.BE.AE.E5.B8.81" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BE%AE%E5%B8%81">微币</a></li><li id="n-.E9.92.B1.E5.8C.85" class="n_sub"><a href="http://open.weibo.com/wiki/%E9%92%B1%E5%8C%85%EF%BC%88%E4%BA%BA%E6%B0%91%E5%B8%81%EF%BC%89%E6%94%AF%E4%BB%98">钱包</a></li>	</ul>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/%E7%AB%99%E5%86%85%E5%BA%94%E7%94%A8"><em class="wiki_icon icon_wkDoc"></em><span class="txt">站内应用</span>	</a></h3>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/Error_code#" onclick="return false;"><em class="wiki_icon icon_wkDown"></em><span class="txt">资源下载</span><em class="nav_arr"></em>	</a></h3>	<ul class="child_list" style="display:none;"><li id="n-.E5.BE.AE.E5.8D.9A.E6.A0.87.E8.AF.86.E4.B8.8B.E8.BD.BD" class="n_sub"><a href="http://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9A%E6%A0%87%E8%AF%86%E4%B8%8B%E8%BD%BD">微博标识下载</a></li>	</ul>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC"><em class="wiki_icon icon_wkDoc"></em><span class="txt">联系我们</span>	</a></h3>	</li>
+	<li class="n_top ">
+	<h3 action-type="folder"><a href="http://open.weibo.com/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><em class="wiki_icon icon_wkDoc"></em><span class="txt">常见问题</span>	</a></h3>	</li>
+	<li class="n_top" id="p-tb">
+		<h3><em class="wiki_icon icon_wkQus"></em><span class="txt">工具箱</span><em class="nav_arr"></em></h3>
+		<ul class="child_list" style="background:none"><li id="t-whatlinkshere" class="n_sub"><a href="http://open.weibo.com/wiki/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Error_code" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked" class="n_sub"><a href="http://open.weibo.com/wiki/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Error_code" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li><li id="t-specialpages" class="n_sub"><a href="http://open.weibo.com/wiki/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li><li class="n_sub"><a href="http://open.weibo.com/wiki/index.php?title=Error_code&printable=yes" rel="alternate">可打印版</a></li><li id="t-permalink" class="n_sub"><a href="http://open.weibo.com/wiki/index.php?title=Error_code&oldid=12276" title="本页面该修订版本的永久链接">永久链接</a></li>		</ul>
+	</li>
+								</ul>
+								<ul class="quick_nav">
+									                                </ul>
+							</div>
+                            <!--/左侧导航结束-->
+                        </div>
+                    	<div class="wiki_bodyContent" id="bodyContent">
+																				<div id="mw-js-message" class="js-messagebox" style="display:none"></div>
+																					<h1 id="firstHeading" class="firstHeading">Error code</h1>
+														<div id="jump-to-nav">跳转到： <a href="http://open.weibo.com/wiki/Error_code#column-one">导航</a>, <a href="http://open.weibo.com/wiki/Error_code#searchInput">搜索</a></div>
+							<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2 class="wiki_title"> <span class="mw-headline" id=".E9.94.99.E8.AF.AF.E4.BB.A3.E7.A0.81.E8.AF.B4.E6.98.8E">错误代码说明</span></h2>
+<h3> <span class="mw-headline" id=".E9.94.99.E8.AF.AF.E8.BF.94.E5.9B.9E.E5.80.BC.E6.A0.BC.E5.BC.8F">错误返回值格式</span></h3>
+<p>JSON
+</p>
+<pre>{
+	"request"&nbsp;: "/statuses/home_timeline.json",
+	"error_code"&nbsp;: "20502",
+	"error"&nbsp;: "Need you follow uid."
+}
+</pre>
+<h3> <span class="mw-headline" id=".E9.94.99.E8.AF.AF.E4.BB.A3.E7.A0.81.E8.AF.B4.E6.98.8E_2">错误代码说明</span></h3>
+<p>20502
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters" style="border-color: #CCCCCC;">
+  <tbody><tr>
+    <td width="40%" style="text-align:left;padding-left:5px;border:1px solid #cccccc">2</td>
+    <td width="30%" style="text-align:left;padding-left:5px;border:1px solid #cccccc">05</td>
+    <td width="30%" style="text-align:left;padding-left:5px;border:1px solid #cccccc">02</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">服务级错误（1为系统级错误）</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">服务模块代码</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">具体错误代码</td>
+  </tr>
+</tbody></table>
+<p><br>
+</p>
+<h2 class="wiki_title"> <span class="mw-headline" id=".E9.94.99.E8.AF.AF.E4.BB.A3.E7.A0.81.E5.AF.B9.E7.85.A7.E8.A1.A8">错误代码对照表</span></h2>
+<h3> <span class="mw-headline" id=".E7.B3.BB.E7.BB.9F.E7.BA.A7.E9.94.99.E8.AF.AF.E4.BB.A3.E7.A0.81">系统级错误代码</span></h3>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters" style="border-color: #CCCCCC;">
+  <tbody><tr>
+    <td width="10%" style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">错误代码</td>
+    <td width="55%" style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">错误信息</td>
+    <td width="35%" style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">详细描述</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10001</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">System error</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">系统错误</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10002</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Service unavailable</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">服务暂停</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10003</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Remote service error</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">远程服务错误</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10004</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">IP limit</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">IP限制不能请求该资源</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10005</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Permission denied, need a high level appkey</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">该资源需要appkey拥有授权</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10006</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Source paramter (appkey) is missing</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">缺少source (appkey) 参数</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10007</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Unsupport mediatype (%s)</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不支持的MediaType (%s)</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10008</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Param error, see doc for more info</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数错误，请参考API文档</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10009</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Too many pending tasks, system is busy</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">任务过多，系统繁忙</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10010</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Job expired</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">任务超时</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10011</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">RPC error</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">RPC错误</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10012</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Illegal request</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">非法请求</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10013</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Invalid weibo user</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不合法的微博用户</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10014</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Insufficient app permissions</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">应用的接口访问权限受限</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10016</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Miss required parameter (%s) , see doc for more info</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">缺失必选参数 (%s)，请参考API文档</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10017</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Parameter (%s)'s value invalid, expect (%s) , but get (%s) , see doc for more info</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数值非法，需为 (%s)，实际为 (%s)，请参考API文档</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10018</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Request body length over limit</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">请求长度超过限制</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10020</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Request api not found</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">接口不存在</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10021</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">HTTP method is not suported for this request</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">请求的HTTP METHOD不支持，请检查是否选择了正确的POST/GET方式
+</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10022</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">IP requests out of rate limit</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">IP请求频次超过上限</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10023</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">User requests out of rate limit</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">用户请求频次超过上限</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">10024</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">User requests for (%s) out of rate limit</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">用户请求特殊接口 (%s) 频次超过上限</td>
+  </tr>
+</tbody></table>
+<h3> <span class="mw-headline" id=".E6.9C.8D.E5.8A.A1.E7.BA.A7.E9.94.99.E8.AF.AF.E4.BB.A3.E7.A0.81">服务级错误代码</span></h3>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters" style="border-color: #CCCCCC;">
+  <tbody><tr>
+    <td width="10%" style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">错误代码</td>
+    <td width="55%" style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">错误信息</td>
+    <td width="35%" style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">详细描述</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20001</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">IDs is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">IDs参数为空</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20002</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Uid parameter is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Uid参数为空</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20003</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">User does not exists</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">用户不存在</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20005</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Unsupported image type, only suport JPG, GIF, PNG</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不支持的图片类型，仅仅支持JPG、GIF、PNG</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20006</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Image size too large</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">图片太大</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20007</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Does multipart has image</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">请确保使用multpart上传图片</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20008</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Content is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">内容为空</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20009</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">IDs is too many</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">IDs参数太长了</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20012</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Text too long, please input text less than 140 characters</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">输入文字太长，请确认不超过140个字符</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20013</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Text too long, please input text less than 300 characters</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">输入文字太长，请确认不超过300个字符</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20014</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Param is error, please try again</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">安全检查参数有误，请再调用一次</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20015</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Account or ip or app is illgal, can not continue</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">账号、IP或应用非法，暂时无法完成此操作</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20016</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Out of limit</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">发布内容过于频繁</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20017</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Repeat content</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">提交相似的信息</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20018</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Contain illegal website</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">包含非法网址</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20019</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Repeat conetnt</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">提交相同的信息</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20020</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Contain advertising</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">包含广告信息</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20021</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Content is illegal</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">包含非法内容</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20022</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Your ip's behave in a comic boisterous or unruly manner</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">此IP地址上的行为异常</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20031</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Test and verify</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">需要验证码</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20032</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Update success, while server slow now, please wait 1-2 minutes</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">发布成功，目前服务器可能会有延迟，请耐心等待1-2分钟</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20101</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Target weibo does not exist</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不存在的微博</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20102</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Not your own weibo</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不是你发布的微博</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20103</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Can't repost yourself weibo</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不能转发自己的微博</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20104</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Illegal weibo</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不合法的微博</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20109</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Weibo id is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">微博ID为空</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20111</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Repeated weibo text</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不能发布相同的微博</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20201</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Target weibo comment does not exist</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不存在的微博评论</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20202</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Illegal comment</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不合法的评论</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20203</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Not your own comment</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不是你发布的评论</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20204</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Comment id is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">评论ID为空</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20301</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Can't send direct message to user who is not your follower</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不能给不是你粉丝的人发私信</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20302</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Illegal direct message</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不合法的私信</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20303</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Not your own direct message</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不是属于你的私信</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20305</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Direct message does not exist</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不存在的私信</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20306</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Repeated direct message text</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不能发布相同的私信</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20307</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Illegal direct message id</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">非法的私信ID</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20401</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Domain not exist</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">域名不存在</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20402</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Wrong verifier</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Verifier错误</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20501</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Source_user or target_user does not exists</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数source_user或者target_user的用户不存在</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20502</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Please input right target user id or screen_name</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">必须输入目标用户id或者screen_name</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20503</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Need you follow user_id</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数user_id必须是你关注的用户</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20504</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Can not follow yourself </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">你不能关注自己 </td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20505</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Social graph updates out of rate limit</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">加关注请求超过上限</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20506</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Already followed</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">已经关注此用户</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20507</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Verification code is needed</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">需要输入验证码</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20508</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">According to user privacy settings,you can not do this</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">根据对方的设置，你不能进行此操作</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20509</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Private friend count is out of limit</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">悄悄关注个数到达上限 </td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20510</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Not private friend</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不是悄悄关注人</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20511</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Already followed privately</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">已经悄悄关注此用户</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20512</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Please delete the user from you blacklist before you follow the user</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">你已经把此用户加入黑名单，加关注前请先解除</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20513</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Friend count is out of limit!</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">你的关注人数已达上限</td>
+  </tr>
+   <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20521</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Hi Superman, you have concerned a lot of people, have a think of how to make other people concern about you!&nbsp;! If you have any questions, please contact Sina customer service: 400 690 0000</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">hi 超人，你今天已经关注很多喽，接下来的时间想想如何让大家都来关注你吧！如有问题，请联系新浪客服：400 690 0000</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20522</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Not followed </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">还未关注此用户</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20523</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Not followers</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">还不是粉丝</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20524</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Hi Superman, you have cancelled concerning a lot of people, have a think of how to make other people concern about you!&nbsp;! If you have any questions, please contact Sina customer service: 400 690 0000</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">hi 超人，你今天已经取消关注很多喽，接下来的时间想想如何让大家都来关注你吧！如有问题，请联系新浪客服：400 690 0000</td>
+  </tr><tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20601</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">List name too long, please input text less than 10 characters</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">列表名太长，请确保输入的文本不超过10个字符</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20602</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">List description too long, please input text less than 70 characters</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">列表描叙太长，请确保输入的文本不超过70个字符</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20603</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">List does not exists</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">列表不存在</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20604</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Only the owner has the authority</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不是列表的所属者</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20605</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Illegal list name or list description</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">列表名或描叙不合法</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20606</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Object already exists</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">记录已存在</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20607</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">DB error, please contact the administator</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">数据库错误，请联系系统管理员</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20608</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">List name duplicate</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">列表名冲突</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20610</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Does not support private list</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">目前不支持私有分组</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20611</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Create list error</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">创建列表失败</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20612</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Only support private list</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">目前只支持私有分组</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20613</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">You hava subscriber too many lists</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">订阅列表达到上限</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20614</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Too many lists, see doc for more info</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">创建列表达到上限，请参考API文档</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20615</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Too many members, see doc for more info</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">列表成员上限，请参考API文档</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20701</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Repeated tag text</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">不能提交相同的收藏标签</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20702</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Tags is too many</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">最多两个收藏标签</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20703</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Illegal tag name</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">收藏标签名不合法</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20801</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Trend_name is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数trend_name是空值</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20802</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Trend_id is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数trend_id是空值</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20901</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Error: in blacklist</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">错误:已经添加了黑名单</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20902</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Error: Blacklist limit has been reached.</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">错误:已达到黑名单上限</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20903</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Error: System administrators can not be added to the blacklist.</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">错误:不能添加系统管理员为黑名单</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20904</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Error: Can not add yourself to the blacklist.</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">错误:不能添加自己为黑名单</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">20905</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Error: not in blacklist</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">错误:不在黑名单中</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21001</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Tags parameter is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">标签参数为空</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21002</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Tags name too long</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">标签名太长，请确保每个标签名不超过14个字符</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21101</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Domain parameter is error</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数domain错误</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21102</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">The phone number has been used</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">该手机号已经被使用</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21103</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">The account has bean bind phone</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">该用户已经绑定手机</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21104</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Wrong verifier</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Verifier错误</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21301</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Auth faild</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">认证失败</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21302</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Username or password error</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">用户名或密码不正确</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21303</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Username and pwd auth out of rate limit</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">用户名密码认证超过请求限制</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21304</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Version rejected</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">版本号错误</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21305</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Parameter absent</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">缺少必要的参数</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21306</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Parameter rejected</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">OAuth参数被拒绝</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21307</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Timestamp refused</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">时间戳不正确</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21308</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Nonce used</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数nonce已经被使用</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21309</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Signature method rejected</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">签名算法不支持</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21310</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Signature invalid</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">签名值不合法</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21311</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Consumer key unknown</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数consumer_key不存在</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21312</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Consumer key refused</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数consumer_key不合法</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21313</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Miss consumer key</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数consumer_key缺失</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21314</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Token used</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Token已经被使用</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21315</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Token expired</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Token已经过期</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21316</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Token revoked</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Token不合法</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21317</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Token rejected</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Token不合法</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21318</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Verifier fail</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Pin码认证失败</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21319</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Accessor was revoked</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">授权关系已经被解除</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21320</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">OAuth2 must use https</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">使用OAuth2必须使用https</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21321</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Applications over the unaudited use restrictions</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">未审核的应用使用人数超过限制</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21327</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Expired token</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">token过期</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21335</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Request uid's value must be the current user</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">uid参数仅允许传入当前授权用户uid</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21501</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Urls is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数urls是空的</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21502</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Urls is too many</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数urls太多了</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21503</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">IP is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">IP是空值</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21504</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Url is null</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数url是空值</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21601</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Manage notice error, need auth</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">需要系统管理员的权限</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21602</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Contains forbid world</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">含有敏感词</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21603</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Applications send notice over the restrictions</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">通知发送达到限制</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21701</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Manage remind error, need auth</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">提醒失败，需要权限</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21702</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Invalid category</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">无效分类</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21703</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Invalid status</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">无效状态码</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">21901</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">Geo code input error</td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">地理信息输入错误</td>
+  </tr>
+</tbody></table>
+<p><br>
+</p><p><br>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 1145/1000000
+Post-expand include size: 31200/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:769-0!*!*!!*!*!* and timestamp 20140506014637 -->
+</div><div class="printfooter">
+来自“<a href="http://open.weibo.com/wiki/index.php?title=Error_code&oldid=12276">http://open.weibo.com/wiki/index.php?title=Error_code&amp;oldid=12276</a>”</div>
+							<div id="catlinks" class="catlinks catlinks-allhidden"></div>														<div class="wiki_plus_area"> 文档更新时间: 2013-12-17</div>						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/主内容开始-->
+
+<!--统一底导结构-->
+<div class="op_footer">
+<div class="inner">
+    <p class="links">
+		<a href="http://open.weibo.com/wiki/index.php/%E5%85%B3%E4%BA%8E%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0">关于微博开放平台</a><span class="W_vline">|</span>
+		<a href="http://open.weibo.com/wiki/index.php/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a><span class="W_vline">|</span>
+		<a href="http://open.weibo.com/wiki/index.php/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E8%80%85%E5%8D%8F%E8%AE%AE">服务条款</a><span class="W_vline">|</span>
+		<a href="http://weibo.com/weibovc">开发者基金</a><span class="W_vline">|</span>
+		<a href="http://open.weibo.com/game">微游戏</a><span class="W_vline">|</span>
+		<a href="http://open.weibo.com/blog/">平台博客</a>
+	</p>
+    <p class="copyright W_textb">
+		<span>京网文 [2011] 0398-130号</span>
+		<span>京ICP证100780号</span>
+		<span>Copyright © 1996-2014 SINA</span>
+	</p>
+</div>
+</div>
+<!--/统一底导结构-->
+
+<!--反馈入口-->
+<div id="pl_web_wikiToolbar" class="wiki_btNav" style="visibility: visible;">
+	<ul>
+		<li><a action-type="feedback" href="http://open.weibo.com/wiki/Error_code#" onclick="return false;" class="bt_feedback"><em>反馈</em></a></li>
+		<li><a action-type="share" href="http://open.weibo.com/wiki/Error_code#" onclick="return false;" class="bt_share"><em>分享</em></a></li>
+		<li><a action-type="top" href="http://open.weibo.com/wiki/Error_code#" onclick="return false;" class="bt_top"><em>顶部</em></a></li>
+	</ul>
+</div>
+
+
+<script type="text/javascript" src="./Error code - 微博API_files/gaea_1_19.js"></script>
+<script type="text/javascript" src="./Error code - 微博API_files/wiki.js"></script>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script><script type="text/javascript" src="./Error code - 微博API_files/load(3).php"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: wiki:resourceloader:filter:minify-js:4:42c4e9caefe8ca663d220ee0c286ac74 */
+}
+</script><!-- Served in 0.835 secs. --><noscript>
+&lt;img width="0" height="0" src="http://beacon.sina.com.cn/a.gif?noScript" border="0" alt="" /&gt;
+</noscript>
+<script type="text/javascript" charset="utf-8">
+(function() {
+    var doc = document,
+    wa = doc.createElement('script'),
+    s = doc.getElementsByTagName('script')[0];
+    wa.type = 'text/javascript';
+    wa.charset = 'utf-8';
+    wa.async = true;
+    wa.src = 'http://js.t.sinajs.cn/open/analytics/js/suda.js?version=1.1.2.358';
+    s.parentNode.insertBefore(wa, s);
+})();
+</script></body></html>

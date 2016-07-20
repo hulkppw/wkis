@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>同时上传多个文件</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css" media="screen">
+</head>
+<body class="mediawiki ltr sitedir-ltr B_wiki_main  skin-monobook">
+
+
+<!--主内容开始-->
+<div class="wiki_wrap">
+<div class="wiki_con">
+<div class="con_box">
+
+<div class="wiki_body">
+<div class="wiki_inner">
+<div class="main_content clearfix">
+
+<div class="wiki_bodyContent" id="bodyContent">
+<div id="mw-js-message" class="js-messagebox" style="display:none"></div>
+<h1 id="firstHeading" class="firstHeading">file/multi_upload</h1>
+
+
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2 class="wiki_title">
+    <span class="mw-headline" id="statuses.2Frepost_timeline">file/multi_upload</span>
+</h2>
+
+<p>同时上传多个文件
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline" id="URL">URL</span></h2>
+
+<p><span style="text-transform:lowercase;font-weight:600">
+    <a rel="nofollow" class="external free" href="#">http://xxx/file/multi_upload</a>
+</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">支持格式</span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">JSON</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">HTTP请求方式</span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">GET</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">是否需要登录</span></h2>
+
+<p><span style="text-transform:lowercase;font-weight:600">否</span><br>
+
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">请求参数</span></h2>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters"
+       style="border-color: #CCCCCC;">
+
+    <tbody>
+    <tr>
+        <th width="10%" class="t_cell" >&nbsp;
+        </th>
+        <th width="5%" class="t_cell">必选
+        </th>
+        <th width="10%" class="t_cell">类型及范围
+        </th>
+        <th width="75%" class="t_cell">说明
+        </th>
+    </tr>
+    <tr>
+        <td class="t_cell">key
+        </td>
+        <td class="t_cell_c">true
+        </td>
+        <td class="t_cell_l">string
+        </td>
+        <td class="t_cell_l">
+            加密key
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">source
+        </td>
+        <td class="t_cell_c">true
+        </td>
+        <td class="t_cell_l">int32
+        </td>
+        <td class="t_cell_l">
+            文件来源 0：web网页，1：安卓TV客户端，2：安卓手机平板客户端，3：苹果客户端，100：其他
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h2 class="wiki_title"><span class="mw-headline">注意事项</span></h2>
+    <ul>
+        <li>上传文件通过http　post方式提交，放在http消息body中传输    </li>
+    </ul>
+
+
+<h2 class="wiki_title"><span class="mw-headline">返回结果 </span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">JSON示例</span><br>
+</p>
+<pre>
+{
+    "result":"ok",
+    "kus_id":"cn",
+    files:[
+    {
+        "name","aa.jpg",
+        "id":"89993E5C19620BB2B97784C7AA879AF6",
+    }
+    {
+        "name","aa.jpg",
+        "id":"89993E5C19620BB2B97784C7AA879AF6",
+    }
+    ]
+}
+</pre>
+<br>
+
+<p>关于错误返回值与错误代码，参见 <a href="http://open.weibo.com/wiki/Error_code" title="Error code">错误代码说明</a>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">返回字段说明</span></h2>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters"
+       style="border-color: #CCCCCC;">
+
+    <tbody>
+    <tr>
+        <th width="25%"
+            class="t_cell">
+            返回值字段
+        </th>
+        <th width="15%"
+            class="t_cell">
+            字段类型
+        </th>
+        <th width="60%"
+            class="t_cell">
+            字段说明
+        </th>
+    </tr>
+    <tr>
+        <td class="t_cell">result
+        </td>
+        <td class="t_cell_c">string
+        </td>
+        <td class="t_cell_l">结果, ok:成功,failure:失败
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">kus_id
+        </td>
+        <td class="t_cell_c">string
+        </td>
+        <td class="t_cell_l">当前kus编号
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">files
+        </td>
+        <td class="t_cell_c">object
+        </td>
+        <td class="t_cell_l">文件列表
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">id
+        </td>
+        <td class="t_cell_c">string
+        </td>
+        <td class="t_cell_l">文件id，用于获取文件信息和删除使用
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">name
+        </td>
+        <td class="t_cell_c">string
+        </td>
+        <td class="t_cell_l">上传时文件路径加名称（客户端的）
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h2 class="wiki_title"><span class="mw-headline">其他</span></h2>
+
+<p>无
+</p>
+
+<span style="display:none;"><div class="wiki_plus_area"><span class="tit">Language:</span> [[{{{2/uri}}}|中文]]
+</div></span>
+
+</div>
+
+<div id="catlinks" class="catlinks catlinks-allhidden"></div>
+<div class="wiki_plus_area"> 文档更新时间: 2015-02-05</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--/主内容开始-->
+
+
+</body>
+</html>

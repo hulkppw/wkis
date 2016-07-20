@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.ImusicChannelMapper">
+    <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.ImusicChannel">
+
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="btn_img" property="img" jdbcType="VARCHAR"/>
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="img_width" property="width" jdbcType="INTEGER"/>
+        <result column="img_height" property="height" jdbcType="INTEGER"/>
+        <result column="img_x" property="x" jdbcType="INTEGER"/>
+        <result column="img_y" property="y" jdbcType="INTEGER"/>
+        <result column="page" property="pageindex" jdbcType="INTEGER"/>
+        <result column="type" property="type" jdbcType="INTEGER"/>
+
+    </resultMap>
+
+    <resultMap id="BaseResultMapV2" type="com.ising99.wkis.domain.ImusicChannelV2">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="btn_img" property="image" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="parentid" property="parentid" jdbcType="INTEGER"/>
+        <result column="layer" property="layer" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap id="BaseResultMapPage" type="com.ising99.wkis.domain.ImusicChannelPage">
+        <result column="page" property="pageindex" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="getChannelList" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select * from db_newkoip.t_imusic_channel where language = #{language} order by page
+    </select>
+    <select id="getChannelPageList" resultMap="BaseResultMapPage" parameterType="java.lang.Integer">
+        select page from db_newkoip.t_imusic_channel where language = #{language} GROUP BY page
+    </select>
+    <select id="getChannelListBy23Layer" resultMap="BaseResultMapV2" >
+        select * from t_imusic_v2_channel where layer = 2 or layer = 3
+    </select>
+</mapper>

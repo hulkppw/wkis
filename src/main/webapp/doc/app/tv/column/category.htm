@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>获取TV APP分类列表"</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../css/style.css" media="screen">
+</head>
+<body class="mediawiki ltr sitedir-ltr B_wiki_main  skin-monobook">
+
+
+<!--主内容开始-->
+<div class="wiki_wrap">
+<div class="wiki_con">
+<div class="con_box">
+
+<div class="wiki_body">
+<div class="wiki_inner">
+<div class="main_content clearfix">
+
+<div class="wiki_bodyContent" id="bodyContent">
+<div id="mw-js-message" class="js-messagebox" style="display:none"></div>
+<h1 id="firstHeading" class="firstHeading">app/tv/column/category</h1>
+
+
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2 class="wiki_title">
+    <span class="mw-headline" id="statuses.2Frepost_timeline">app/tv/column/category</span>
+</h2>
+
+<p>获取TV APP分类列表"
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline" id="URL">URL</span></h2>
+
+<p><span style="text-transform:lowercase;font-weight:600">
+    <a rel="nofollow" class="external free" href="#">http://xxx/app/tv/column/category</a>
+</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">支持格式</span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">JSON</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">HTTP请求方式</span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">GET</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">是否需要登录</span></h2>
+
+<p><span style="text-transform:lowercase;font-weight:600">否</span><br>
+
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">请求参数</span></h2>
+    <ul>
+        <li>无
+        </li>
+    </ul>
+<h2 class="wiki_title"><span class="mw-headline" >注意事项</span></h2>
+<ul>
+    <li>无
+    </li>
+</ul>
+
+
+<h2 class="wiki_title"><span class="mw-headline" >返回结果 </span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">JSON示例</span><br>
+</p>
+<pre>
+[
+    {
+        "category": "31",
+        "list": [
+            {
+                "id": 311,
+                "title": "影视",
+                "img": ""
+            },
+            {
+                "id": 312,
+                "title": "直播",
+                "img": ""
+            },
+            {
+                "id": 313,
+                "title": "音乐",
+                "img": ""
+            },
+            {
+                "id": 314,
+                "title": "K歌",
+                "img": ""
+            }
+        ]
+    },
+    {
+        "category": "32",
+        "list": [
+            {
+                "id": 321,
+                "title": "社交",
+                "img": ""
+            },
+            {
+                "id": 322,
+                "title": "生活",
+                "img": ""
+            },
+            {
+                "id": 323,
+                "title": "学习",
+                "img": ""
+            },
+            {
+                "id": 324,
+                "title": "工具",
+                "img": ""
+            }
+        ]
+    },
+    {
+        "category": "33",
+        "list": [
+            {
+                "id": 331,
+                "title": "遥控器",
+                "img": ""
+            },
+            {
+                "id": 332,
+                "title": "手柄",
+                "img": ""
+            },
+            {
+                "id": 333,
+                "title": "滑鼠",
+                "img": ""
+            },
+            {
+                "id": 334,
+                "title": "休闲",
+                "img": ""
+            },
+            {
+                "id": 335,
+                "title": "竞技",
+                "img": ""
+            },
+            {
+                "id": 336,
+                "title": "策略",
+                "img": ""
+            }
+        ]
+    }
+]
+</pre>
+<br>
+
+<p>关于错误返回值与错误代码，参见 <a href="http://open.weibo.com/wiki/Error_code" title="Error code">错误代码说明</a>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline" >返回字段说明</span></h2>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters" style="border-color: #CCCCCC;">
+
+    <tbody>
+    <tr>
+        <th width="25%" style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">返回值字段
+        </th>
+        <th width="15%" style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">字段类型
+        </th>
+        <th width="60%" style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">字段说明
+        </th>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">category
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">分类编号
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">list
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">object
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">分类列表
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">id
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">栏目分类编号（查询app列表信息时带入）
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">title
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">标题
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">img
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">图片地址
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h2 class="wiki_title"><span class="mw-headline">其他</span></h2>
+
+<p>
+</p>
+
+<span style="display:none;"><div class="wiki_plus_area"><span class="tit">Language:</span> [[{{{2/uri}}}|中文]]
+</div></span>
+
+</div>
+
+<div id="catlinks" class="catlinks catlinks-allhidden"></div>
+<div class="wiki_plus_area"> 文档更新时间: 2013-07-02</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--/主内容开始-->
+
+
+</body>
+</html>

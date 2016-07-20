@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.SingHistoryMapper" >
+  <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.SingHistory" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="isis9" property="isis9" jdbcType="INTEGER" />
+    <result column="languagecode" property="languagecode" jdbcType="INTEGER" />
+    <result column="songid" property="songid" jdbcType="VARCHAR" />
+    <result column="songname" property="songname" jdbcType="VARCHAR" />
+    <result column="singername" property="singername" jdbcType="VARCHAR" />
+    <result column="singerid" property="singerid" jdbcType="VARCHAR" />
+    <result column="songspell" property="songspell" jdbcType="VARCHAR" />
+    <result column="songtype" property="songtype" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+    <!-- 添加 -->
+    <insert id="add" parameterType="com.ising99.wkis.parameter.SingHistoryParam" >
+        insert into db_newkoip.t_singhistory
+        (
+        <if test="isis9 != null">
+            isis9,
+        </if>
+        <if test="languagecode != null">
+            languagecode,
+        </if>
+        <if test="songid != null">
+            songid,
+        </if>
+        <if test="songname != null">
+            songname,
+        </if>
+        <if test="singername != null">
+            singername,
+        </if>
+        <if test="singerid != null">
+            singerid,
+        </if>
+        <if test="songspell != null">
+            songspell,
+        </if>
+        <if test="songtype != null">
+            songtype,
+        </if>
+        <if test="userid != null">
+            userid,
+        </if>
+        createtime)
+        values(
+        <if test="isis9 != null">
+            #{isis9},
+        </if>
+        <if test="languagecode != null">
+            #{languagecode},
+        </if>
+        <if test="songid != null">
+            #{songid},
+        </if>
+        <if test="songname != null">
+            #{songname},
+        </if>
+        <if test="singername != null">
+            #{singername},
+        </if>
+        <if test="singerid != null">
+            #{singerid},
+        </if>
+        <if test="songspell != null">
+            #{songspell},
+        </if>
+        <if test="songtype != null">
+            #{songtype},
+        </if>
+        <if test="userid != null">
+            #{userid},
+        </if>
+        #{createtime})
+    </insert>
+
+    <!--查询列表-->
+    <select id="getList" resultMap="BaseResultMap" parameterType="com.ising99.wkis.parameter.SingHistoryParam">
+        select * from db_newkoip.t_singhistory where userid = #{userid} order by id desc
+        limit #{pagesize} offset #{offset}
+    </select>
+    <!--查询总数-->
+    <select id="getCount" resultType="java.lang.Integer" parameterType="com.ising99.wkis.parameter.SingHistoryParam">
+        select count(*) as c
+        from db_newkoip.t_singhistory where userid = #{userid}
+    </select>
+    <!-- 删除 -->
+    <delete id="delete" parameterType="com.ising99.wkis.parameter.SingHistoryParam" >
+        delete from db_newkoip.t_singhistory where  id = #{id} and userid=#{userid}
+    </delete>
+</mapper>

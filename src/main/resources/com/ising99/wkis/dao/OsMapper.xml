@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.OsMapper" >
+  <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.Os" >
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="VARCHAR" />
+    <result column="utc" property="utc" jdbcType="BIGINT" />
+    <result column="previous_utc" property="previous_utc" jdbcType="BIGINT" />
+    <result column="md5" property="md5" jdbcType="VARCHAR" />
+    <result column="size" property="size" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+  </resultMap>
+    <!--找到utc时间大于当前设备utc时间的所有os更新数据-->
+  <select id="latestVersionByDeviceCode" resultMap="BaseResultMap" parameterType="com.ising99.wkis.parameter.OsLatestVersionParam" >
+select * from os
+ where os.`device_code` = #{code} and utc > #{utc} ORDER BY os.utc desc LIMIT 1
+</select>
+    <select id="getInfoByUTC" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        select * from os
+        where utc = #{utc}
+    </select>
+</mapper>

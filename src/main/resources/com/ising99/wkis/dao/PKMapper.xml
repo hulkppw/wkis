@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.PKMapper">
+    <resultMap id="ArenaResultMap" type="com.ising99.wkis.domain.PKArena">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="image" property="image" jdbcType="VARCHAR"/>
+        <result column="arena_song_id" property="arena_song_id" jdbcType="INTEGER"/>
+        <result column="song_id" property="song_id" jdbcType="VARCHAR"/>
+        <result column="song_name" property="song_name" jdbcType="VARCHAR"/>
+        <result column="singer_name" property="singer_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="StarResultMap" type="com.ising99.wkis.domain.PKStar">
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="singer_song_id" property="singer_song_id" jdbcType="INTEGER"/>
+        <result column="index" property="index" jdbcType="INTEGER"/>
+        <result column="song_name" property="songname" jdbcType="VARCHAR"/>
+        <result column="head" property="head" jdbcType="VARCHAR"/>
+        <result column="listen_count" property="listen_count" jdbcType="INTEGER"/>
+        <result column="like_count" property="like_count" jdbcType="INTEGER"/>
+        <result column="resources_url" property="resourcesUrl" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="NickNameResultMap" type="com.ising99.wkis.domain.PKNickName">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="nick" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="HeadResultMap" type="com.ising99.wkis.domain.PKHead">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="url" property="img" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="ArenaSongResultMap" type="com.ising99.wkis.domain.PKArenaSong">
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="song_name" property="songname" jdbcType="VARCHAR"/>
+        <result column="is_is9" property="isis9" javaType="INTEGER"/>
+        <result column="start_date" property="start" jdbcType="TIMESTAMP"/>
+        <result column="end_date" property="end" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <resultMap id="ArenaSongInfoResultMap" type="com.ising99.wkis.domain.PKArenaSongInfo">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="song_name" property="song_name" jdbcType="VARCHAR"/>
+        <result column="is_is9" property="is_is9" javaType="INTEGER"/>
+        <result column="song_id" property="song_id" jdbcType="INTEGER"/>
+        <result column="arena_id" property="arena_id" javaType="INTEGER"/>
+        <result column="singer_id" property="singer_id" jdbcType="INTEGER"/>
+        <result column="singer_name" property="singer_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="ArenaSongInfoBasicResultMap" type="com.ising99.wkis.domain.PKArenaSongInfoBasic"
+               extends="ArenaSongResultMap">
+        <result column="arena_id" property="arena_id" javaType="INTEGER"/>
+        <result column="language" property="language" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap id="TopResultMap" type="com.ising99.wkis.domain.PKTop">
+        <result column="id" property="singer_song_id" jdbcType="INTEGER"/>
+        <result column="pk_singer_id" property="singer_id" jdbcType="INTEGER"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="score" property="score" jdbcType="INTEGER"/>
+        <result column="ip" property="ip" jdbcType="VARCHAR"/>
+        <result column="pk_singer_head" property="head" jdbcType="VARCHAR"/>
+        <result column="listen_count" property="listen_count" jdbcType="INTEGER"/>
+        <result column="like_count" property="like_count" jdbcType="INTEGER"/>
+        <result column="pk_arena_song_id" property="arena_song_id" jdbcType="INTEGER"/>
+        <result column="resources_url" property="resourcesurl" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getArenaList" resultMap="ArenaResultMap">
+        select a.id as id,a.name as name,a.image as image,b.id as arena_song_id,b.song_id as song_id,b.song_name as song_name,b.singer_name as singer_name from
+        (select * from db_newkoip.t_pk_arena where language=#{language} and display=1) as a
+        inner join (SELECT * from
+        db_newkoip.t_pk_arena_song where
+        end_date>=date_format(now(),'%Y-%c-%d')
+        and date_format(now(),'%Y-%c-%d') >=start_date) as b
+        on a.id = b.arena_id
+    </select>
+
+    <select id="getArenaSongById" resultMap="ArenaSongInfoBasicResultMap">
+        select * from db_newkoip.t_pk_arena_song where id = #{arena_song_id}
+    </select>
+
+    <select id="getArenaSongExpired" resultMap="ArenaSongResultMap">
+        select * from db_newkoip.t_pk_arena_song where id = #{arena_song_id} and end_date>=date_format(now(),'%Y-%c-%d')
+        and date_format(now(),'%Y-%c-%d') >=start_date
+    </select>
+
+    <select id="getArenaSongInfo" resultMap="ArenaSongInfoResultMap"
+            parameterType="java.lang.Integer">
+        select * from db_newkoip.t_pk_arena_song where id = #{arena_song_id}
+    </select>
+
+    <select id="getStarList" resultMap="StarResultMap">
+        select a.pk_singer_song_id as singer_song_id, a.index, b.nickname as nickname, b.song_name as song_name, b.pk_singer_head as head,b.resources_url as resources_url, b.listen_count as listen_count, b.like_count as like_count  from (select * from db_newkoip.t_pk_star where language =#{language}) as a
+        inner join db_newkoip.t_pk_singer_song as b on a.pk_singer_song_id = b.id
+    </select>
+
+    <select id="getNickNameList" resultMap="NickNameResultMap">
+        select * from db_newkoip.t_pk_nickname where language =#{language } order by id
+    </select>
+
+    <select id="getHeadList" resultMap="HeadResultMap">
+        select * from db_newkoip.t_pk_head where language =#{language } order by id
+    </select>
+
+    <select id="getHeadUrlById" resultType="java.lang.String">
+        select url from db_newkoip.t_pk_head where id=#{id}
+    </select>
+
+    <select id="getArenaSongCount" resultType="java.lang.Integer"
+            parameterType="com.ising99.wkis.parameter.PKArenaSongParam">
+        select count(*) as c
+        from db_newkoip.t_pk_arena_song where arena_id=#{arenaid} and language = #{language}
+    </select>
+
+    <select id="getArenaSongList" resultMap="ArenaSongResultMap"
+            parameterType="com.ising99.wkis.parameter.PKArenaSongParam">
+        select * from db_newkoip.t_pk_arena_song where arena_id=#{arenaid} and language = #{language} limit #{pagesize} offset #{offset}
+    </select>
+
+    <select id="getTopCount" resultType="java.lang.Integer"
+            parameterType="com.ising99.wkis.parameter.PKTopParam">
+        select count(*) as c
+        from db_newkoip.t_pk_singer_song where pk_arena_song_id=#{arena_song_id} and language = #{language}
+    </select>
+
+    <select id="getTopList" resultMap="TopResultMap"
+            parameterType="com.ising99.wkis.parameter.PKTopParam">
+        select * from db_newkoip.t_pk_singer_song where pk_arena_song_id=#{arena_song_id} and language = #{language}  order by score desc limit #{pagesize} offset #{offset}
+    </select>
+
+    <insert id="addTempSinger" parameterType="com.ising99.wkis.parameter.PKTempSingerParam">
+        insert into db_newkoip.t_pk_temp_singer (id,userid,createtime,language,status) values (#{tempid},#{userid},#{createtime,jdbcType=TIMESTAMP},#{language},#{status})
+    </insert>
+
+    <select id="getRankingByScore" resultType="java.lang.Integer"
+            parameterType="com.ising99.wkis.parameter.PKRankingByScoreParam">
+        select count(*) + 1 as ranking from db_newkoip.t_pk_singer_song where pk_arena_song_id = #{arenaSongId} and score > #{score}
+    </select>
+
+    <select id="getTopScore" resultType="java.lang.Integer">
+        select MAX(score) as s from db_newkoip.t_pk_singer_song where pk_arena_song_id = #{arenaSongId}
+    </select>
+</mapper>

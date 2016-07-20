@@ -1,0 +1,19 @@
+{"list":[{
+    "id": 1,
+    "version": "20140522151241",
+    "md5": "076E3CAED758A1C18C91A0E9CAE3368F",
+    "path": "/disk/",
+    "size": 879394,
+    "filename": "update.bin",
+    "url": "http://xxx.xxx.com/resource/ota/upload/20140522/4ab55998f10442e5952b1b2ef09a1997.bin",
+    "description": ""
+},{
+    "id": 2,
+    "version": "2014052215222",
+    "md5": "076E3CAED758A1C18C91239CAE3368F",
+    "path": "/disk/",
+    "size": 123456,
+    "filename": "update.bin",
+    "url": "http://xxx.xxx.com/resource/ota/upload/20140522/4ab55998f10442e5952b1b2ef09a1997.bin",
+    "description": ""
+}]}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.TmsThemeMusicMapper" >
+  <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.TmsThemeMusic" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="theme_id" property="theme_id" jdbcType="INTEGER" />
+    <result column="song_id" property="song_id" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="singer" property="singer" jdbcType="VARCHAR" />
+    <result column="singer_id" property="singer_id" jdbcType="VARCHAR" />
+    <result column="is_on" property="is_on" jdbcType="BOOLEAN" />
+    <result column="is_is9" property="is_is9" jdbcType="BOOLEAN" />
+    <result column="singertype" property="singertype" jdbcType="INTEGER" />
+    <result column="languagecode" property="languagecode" jdbcType="INTEGER" />
+    <result column="spell" property="spell" jdbcType="VARCHAR" />
+    <result column="scene1" property="scene1" jdbcType="INTEGER" />
+    <result column="scene2" property="scene2" jdbcType="INTEGER" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <!--
+ 获取主题歌曲列表
+ -->
+  <select id="getList" resultMap="BaseResultMap" parameterType="com.ising99.wkis.parameter.TmsThemeMusicParam">
+    select * from db_newkoip.t_ms_theme_music where  theme_id = #{theme_id} order by id desc
+    limit #{pagesize} offset #{offset}
+  </select>
+  <!--
+获取主题歌曲列表数量
+-->
+  <select id="getCount" resultType="java.lang.Integer" parameterType="com.ising99.wkis.parameter.TmsThemeMusicParam">
+    select count(*) as c
+    from db_newkoip.t_ms_theme_music where theme_id = #{theme_id}
+  </select>
+
+  <select id="selectBysongId" resultMap="BaseResultMap">
+    select * from db_newkoip.t_ms_theme_music where song_id=#{song_id}
+  </select>
+</mapper>

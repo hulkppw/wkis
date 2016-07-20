@@ -1,0 +1,25 @@
+{"data": [
+    {
+        "title": "推荐",
+        "id": 1,
+        "imgUrl1": "http://www.baidu.com",
+        "imgUrl2": "http://www.baidu.com",
+        "child":[{
+            "title": "游戏",
+            "id": 11,
+            "imgUrl1": "http://www.baidu.com",
+            "imgUrl2": "http://www.baidu.com"
+        },{
+            "title": "软件",
+            "id": 12,
+            "imgUrl1": "http://www.baidu.com",
+            "imgUrl2": "http://www.baidu.com"
+        }]
+    },
+    {
+        "title": "排行",
+        "id": 1,
+        "imgUrl1": "http://www.baidu.com",
+        "imgUrl2": "http://www.baidu.com"
+    }
+]}

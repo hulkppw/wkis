@@ -1,0 +1,26 @@
+{"pagecount": 1, "recordcount": 4, "list": [
+    {
+        "id": 1,
+        "title": "经典老歌",
+        "bgimg": null,
+        "selectedimg": null
+    },
+    {
+        "id": 2,
+        "title": "浪漫七夕",
+        "bgimg": null,
+        "selectedimg": null
+    },
+    {
+        "id": 3,
+        "title": "清凉夏日",
+        "bgimg": null,
+        "selectedimg": null
+    },
+    {
+        "id": 4,
+        "title": "青葱岁月",
+        "bgimg": null,
+        "selectedimg": null
+    }
+]}

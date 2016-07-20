@@ -1,0 +1,107 @@
+{"list": [
+    {
+        "page_index": 1,
+        "page": [
+            {
+                "name": "channel1",
+                "id": 1,
+                "img_url1": "http://www.baidu.com",
+                "img_url2": "http://www.baidu.com",
+                "x": 50,
+                "y": 300,
+                "width": 400,
+                "height": 400
+            },
+            {
+                "name": "channel1",
+                "id": 1,
+                "img_url1": "http://www.baidu.com",
+                "img_url2": "http://www.baidu.com",
+                "x": 50,
+                "y": 300,
+                "width": 400,
+                "height": 400
+            },
+            {
+                "name": "channel1",
+                "id": 1,
+                "img_url1": "http://www.baidu.com",
+                "img_url2": "http://www.baidu.com",
+                "x": 50,
+                "y": 300,
+                "width": 400,
+                "height": 400
+            }
+        ]
+    },
+    {
+        "page_index": 2,
+        "page": [
+            {
+                "name": "channel1",
+                "id": 1,
+                "img_url1": "http://www.baidu.com",
+                "img_url2": "http://www.baidu.com",
+                "x": 50,
+                "y": 300,
+                "width": 400,
+                "height": 400
+            },
+            {
+                "name": "channel1",
+                "id": 1,
+                "img_url1": "http://www.baidu.com",
+                "img_url2": "http://www.baidu.com",
+                "x": 50,
+                "y": 300,
+                "width": 400,
+                "height": 400
+            },
+            {
+                "name": "channel1",
+                "id": 1,
+                "img_url1": "http://www.baidu.com",
+                "img_url2": "http://www.baidu.com",
+                "x": 50,
+                "y": 300,
+                "width": 400,
+                "height": 400
+            }
+        ]
+    },
+    {
+        "page_index": 3,
+        "page": [
+            {
+                "name": "channel1",
+                "id": 1,
+                "img_url1": "http://www.baidu.com",
+                "img_url2": "http://www.baidu.com",
+                "x": 50,
+                "y": 300,
+                "width": 400,
+                "height": 400
+            },
+            {
+                "name": "channel1",
+                "id": 1,
+                "img_url1": "http://www.baidu.com",
+                "img_url2": "http://www.baidu.com",
+                "x": 50,
+                "y": 300,
+                "width": 400,
+                "height": 400
+            },
+            {
+                "name": "channel1",
+                "id": 1,
+                "img_url1": "http://www.baidu.com",
+                "img_url2": "http://www.baidu.com",
+                "x": 50,
+                "y": 300,
+                "width": 400,
+                "height": 400
+            }
+        ]
+    }
+]}

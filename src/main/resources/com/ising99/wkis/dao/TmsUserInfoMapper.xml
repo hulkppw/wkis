@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.TmsUserInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.TmsUserInfo" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="platform" property="platform" jdbcType="INTEGER" />
+    <result column="platform_userid" property="platform_userid" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="head" property="head" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="INTEGER" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="modifytime" property="modifytime" jdbcType="TIMESTAMP" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select * from db_newkoip.t_ms_userinfo where id = #{id}
+  </select>
+
+  <select id="selectByUserId" resultMap="BaseResultMap">
+    select * from db_newkoip.t_ms_userinfo where platform_userid = #{0} and platform=#{1}
+  </select>
+  <update id="update" parameterType="com.ising99.wkis.domain.TmsUserInfo">
+    update db_newkoip.t_ms_userinfo set  id=#{id},nickname=#{nickname},gender=#{gender},birthday=#{birthday},mobile=#{mobile}, province=#{province}, city=#{city} where id=#{id}
+  </update>
+  <insert id="insert"  useGeneratedKeys="true" keyProperty="id" parameterType="com.ising99.wkis.domain.TmsUserInfo">
+
+    insert into db_newkoip.t_ms_userinfo (platform,platform_userid,nickname,head,gender,birthday,mobile,province,city,modifytime,createtime)
+    values (#{platform,jdbcType=INTEGER},#{platform_userid,jdbcType=VARCHAR},#{nickname,jdbcType=VARCHAR},#{head,jdbcType=VARCHAR},#{gender,jdbcType=INTEGER},#{birthday,jdbcType=DATE},#{mobile,jdbcType=VARCHAR},#{province,jdbcType=VARCHAR},#{city,jdbcType=VARCHAR},#{modifytime,jdbcType=DATE},#{createtime,jdbcType=DATE})
+  </insert>
+</mapper>

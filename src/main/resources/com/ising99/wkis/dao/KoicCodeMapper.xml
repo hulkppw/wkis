@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.KoicCodeMapper">
+    <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.KoicCode">
+        <id column="ID" property="id" jdbcType="INTEGER"/>
+        <result column="KOICCODE" property="koiccode" jdbcType="VARCHAR"/>
+        <result column="MAC" property="mac" jdbcType="VARCHAR"/>
+        <result column="ACTIVEDATE" property="activedate" jdbcType="TIMESTAMP"/>
+        <!--<result column="REGTYPE" property="devType" jdbcType="INTEGER"/>-->
+        <!--<result column="nickName" property="nickName" jdbcType="VARCHAR"/>
+        <result column="province" property="province" jdbcType="VARCHAR"/>
+        <result column="mobile" property="mobile" jdbcType="VARCHAR"/>
+        <result column="sex" property="sex" jdbcType="INTEGER"/>
+        <result column="loginNodeId" property="loginNodeId" jdbcType="INTEGER"/>-->
+        <!-- <result column="PARTNER" property="partner" jdbcType="INTEGER"/>-->
+        <!-- userInfo.setUserId(Integer.parseInt(rs.getString("USERID")));
+         userInfo.setPassWord(rs.getString("PASSWORD"));
+         userInfo.setMachineNo(rs.getString("MACHIONNO"));
+         userInfo.setDevType(rs.getInt("REGTYPE"));
+         userInfo.setPartner(rs.getInt("PARTNER"));
+         userInfo.setMember(rs.getString("MEMBERS"));
+         userInfo.setPartner(rs.getInt("PARTNER"));-->
+    </resultMap>
+
+    <select id="checkCode" resultMap="BaseResultMap" parameterType="String">
+     select ID,KOICCODE,MAC,ACTIVEDATE from t_koiccode where KOICCODE = #{koiccode,jdbcType=VARCHAR} limit 1
+    </select>
+
+    <!-- <select id="isExists" resultMap="BaseResultMap" parameterType="com.ising99.wkis.domain.KodCodeInfo">
+        select * from t_kodcodeinfo where 1=1 and (mac=#{mac} or sncode=#{sncode} or hnuserid=#{hnuserid}) limit 1
+     </select>-->
+
+
+    <!-- <insert id="insert" parameterType="com.ising99.wkis.domain.KodCodeInfo">
+         <selectKey resultType="java.lang.Integer" order="AFTER"
+                    keyProperty="id">
+             SELECT LAST_INSERT_ID() AS ID
+         </selectKey>
+         insert into
+         t_kodcodeinfo(mac,sncode, hnuserid,stated)values
+         (#{mac},#{sncode},#{hnuserid},#{stated})
+     </insert>-->
+</mapper>

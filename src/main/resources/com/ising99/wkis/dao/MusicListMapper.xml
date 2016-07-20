@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.MusicListMapper">
+    <resultMap id="ising99Music" type="com.ising99.wkis.domain.MusicList">
+        <result property="songid" column="songid" jdbcType="VARCHAR"></result>
+        <result property="songname" column="songname" jdbcType="VARCHAR"></result>
+        <result property="songspell" column="songspell" jdbcType="VARCHAR"></result>
+        <result property="languagecode" column="languagecode" jdbcType="INTEGER"></result>
+        <result property="songtype" column="songtype" jdbcType="VARCHAR"></result>
+        <result property="singerid1" column="singerid1" jdbcType="VARCHAR"></result>
+        <result property="singername1" column="singername1" jdbcType="VARCHAR"></result>
+        <result property="isis9" column="isis9" jdbcType="BOOLEAN"></result>
+    </resultMap>
+    <select id="MusicList" resultMap="ising99Music">
+      select * from kds.${version}_musiclist_${language}_0 where songid=#{songid}
+    </select>
+    <select id="getMusicList" resultMap="ising99Music">
+        select * from kds.${version}_musiclist_${language}_0 INNER JOIN db_newkoip.t_ms_notice on
+    </select>
+</mapper>

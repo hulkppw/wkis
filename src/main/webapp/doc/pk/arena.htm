@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>热门擂台</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css" media="screen">
+</head>
+<body class="mediawiki ltr sitedir-ltr B_wiki_main  skin-monobook">
+
+
+<!--主内容开始-->
+<div class="wiki_wrap">
+<div class="wiki_con">
+<div class="con_box">
+
+<div class="wiki_body">
+<div class="wiki_inner">
+<div class="main_content clearfix">
+
+<div class="wiki_bodyContent" id="bodyContent">
+<div id="mw-js-message" class="js-messagebox" style="display:none"></div>
+<h1 id="firstHeading" class="firstHeading">pk/arena</h1>
+
+
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2 class="wiki_title">
+    <span class="mw-headline" id="statuses.2Frepost_timeline">pk/arena</span>
+</h2>
+
+<p>热门擂台
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline" id="URL">URL</span></h2>
+
+<p><span style="text-transform:lowercase;font-weight:600">
+    <a rel="nofollow" class="external free" href="#">http://xxx/pk/arena</a>
+</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">支持格式</span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">JSON</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">HTTP请求方式</span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">GET</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">是否需要登录</span></h2>
+
+<p><span style="text-transform:lowercase;font-weight:600">否</span><br>
+
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">请求参数</span></h2>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters"
+       style="border-color: #CCCCCC;">
+
+    <tbody>
+    <tr>
+        <th width="10%" style="text-align:center;font-weight:bolder;border:1px solid #cccccc">&nbsp;
+        </th>
+        <th width="5%" style="text-align:center;font-weight:bolder;border:1px solid #cccccc">必选
+        </th>
+        <th width="10%" style="text-align:center;font-weight:bolder;border:1px solid #cccccc">类型及范围
+        </th>
+        <th width="75%" style="text-align:center;font-weight:bolder;border:1px solid #cccccc">说明
+        </th>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">language
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            语言 0：简体中文，1：繁体中文
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h2 class="wiki_title"><span class="mw-headline">注意事项</span></h2>
+<ul>
+    <li>如果当前擂台没有打擂歌曲（歌曲没有添加、或者歌曲的生效时间没有在今天），返回的字段song_id,song_name,singer_name，都为空字符串。客户端应该处理这种情况，提示用户没有擂台歌曲，请选择其他擂台
+    </li>
+</ul>
+
+
+<h2 class="wiki_title"><span class="mw-headline">返回结果 </span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">JSON示例</span><br>
+</p>
+<pre>
+[
+    {
+        "id":1,
+        "name":"擂台1",
+        "image":"http://ww2.sinaimg.cn/mw600/005uH27gjw1em5cq5q3txj30d40kuwg1.jpg",
+        "arena_song_id":1,
+        "song_id":"22220",
+        "song_name":"爱你一万年",
+        "singer_name":"刘德华"
+    },
+    {
+        "id":2,
+        "name":"擂台2",
+        "image":"http://ww2.sinaimg.cn/mw600/005uH27gjw1em5cq5q3txj30d40kuwg1.jpg",
+        "arena_song_id":2,
+        "song_id":"22220",
+        "song_name":"爱你一万年",
+        "singer_name":"刘德华"
+    },
+    ...
+]
+</pre>
+<br>
+
+<p>关于错误返回值与错误代码，参见 <a href="http://open.weibo.com/wiki/Error_code" title="Error code">错误代码说明</a>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">返回字段说明</span></h2>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters"
+       style="border-color: #CCCCCC;">
+
+    <tbody>
+    <tr>
+        <th width="25%"
+            style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">
+            返回值字段
+        </th>
+        <th width="15%"
+            style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">
+            字段类型
+        </th>
+        <th width="60%"
+            style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">
+            字段说明
+        </th>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">id
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">擂台id
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">name
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">擂台名称
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">image
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">擂台图片地址
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">arena_song_id
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">当前擂台歌曲id
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">song_id
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">歌曲曲库编号，用于点歌
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">song_name
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">歌曲名称
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">singer_name
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">歌手名称
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h2 class="wiki_title"><span class="mw-headline">其他</span></h2>
+
+<p>无
+</p>
+
+<span style="display:none;"><div class="wiki_plus_area"><span class="tit">Language:</span> [[{{{2/uri}}}|中文]]
+</div></span>
+
+</div>
+
+<div id="catlinks" class="catlinks catlinks-allhidden"></div>
+<div class="wiki_plus_area"> 文档更新时间: 2014-11-08 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--/主内容开始-->
+
+
+</body>
+</html>

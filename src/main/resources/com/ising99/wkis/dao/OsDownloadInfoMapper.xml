@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.OsDownloadInfoMapper">
+
+    <insert id="insert" parameterType="com.ising99.wkis.parameter.OsDownloadInfoParam">
+
+        insert into os_download_info ( next_version,version, ip,
+       createtime, wifimac, mac,sn,koiccode,firmware)
+        values (#{next_version},#{version}, #{ip},
+      now(), #{wifimac}, #{mac},#{sn},#{koiccode},#{firmware})
+    </insert>
+
+</mapper>

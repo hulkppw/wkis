@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.TVAppMapper">
+    <resultMap id="ColumnInfoResultMap" type="com.ising99.wkis.domain.TVColumnInfo">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="img" property="img" jdbcType="VARCHAR"/>
+    </resultMap>
+    <resultMap id="RecommendColumnResultMap" type="com.ising99.wkis.domain.TVRecommendColumn">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="img" property="img" jdbcType="VARCHAR"/>
+        <result column="appicon" property="icon" jdbcType="VARCHAR"/>
+        <result column="tvapp_info_id" property="appinfoid" jdbcType="INTEGER"/>
+        <result column="appgetnamefromapp" property="packageName" jdbcType="VARCHAR"/>
+        <result column="tag" property="tag" jdbcType="INTEGER"/>
+    </resultMap>
+    <resultMap id="TVContentResultMap" type="com.ising99.wkis.domain.TVContent">
+        <result column="app_info_id" property="appinfoid" jdbcType="INTEGER"/>
+        <result column="appname" property="name" jdbcType="VARCHAR"/>
+        <result column="appicon" property="icon" jdbcType="VARCHAR"/>
+        <result column="appversion" property="version" jdbcType="VARCHAR"/>
+        <result column="downloadcount" property="downloadcount" jdbcType="INTEGER"/>
+        <result column="appgetnamefromapp" property="packageName" jdbcType="VARCHAR"/>
+        <result column="tag" property="tag" jdbcType="INTEGER"/>
+        <result column="typename" property="type" jdbcType="VARCHAR"/>
+    </resultMap>
+    <resultMap id="TVAppInfoResultMap" type="com.ising99.wkis.domain.TVAppInfo">
+        <result column="id" property="appinfoid" jdbcType="INTEGER"/>
+        <result column="appname" property="name" jdbcType="VARCHAR"/>
+        <result column="appicon" property="icon" jdbcType="VARCHAR"/>
+        <result column="appversion" property="version" jdbcType="VARCHAR"/>
+        <result column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
+        <result column="size" property="size" jdbcType="INTEGER"/>
+        <result column="downloadcount" property="download" jdbcType="INTEGER"/>
+        <result column="appdesign1" property="design1" jdbcType="VARCHAR"/>
+        <result column="appdesign2" property="design2" jdbcType="VARCHAR"/>
+        <result column="appdesign3" property="design3" jdbcType="VARCHAR"/>
+        <result column="appdesign4" property="design4" jdbcType="VARCHAR"/>
+        <result column="appurl" property="url" jdbcType="VARCHAR"/>
+        <result column="appresume" property="resume" jdbcType="VARCHAR"/>
+    </resultMap>
+    <resultMap id="TVAppVersionResultMap" type="com.ising99.wkis.domain.TVAppVersionInfo">
+        <result column="id" property="appinfoid" jdbcType="INTEGER"/>
+        <result column="appversion" property="version" jdbcType="VARCHAR"/>
+        <result column="downloadcount" property="download" jdbcType="INTEGER"/>
+        <result column="size" property="size" jdbcType="INTEGER"/>
+        <result column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
+        <result column="appicon" property="icon" jdbcType="VARCHAR"/>
+        <result column="md5" property="md5" jdbcType="VARCHAR"/>
+        <result column="appurl" property="url" jdbcType="VARCHAR"/>
+        <result column="appupdateresume" property="resume" jdbcType="VARCHAR"/>
+        <result column="appname" property="name" jdbcType="VARCHAR"/>
+        <result column="appgetnamefromapp" property="packagename" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="TVContentWhere">
+
+        <if test="columnid != null and columnid != 0">
+            <choose>
+                <!--找到影视、音乐、游戏 这三个大分类底下的所有apk-->
+                <when test="columnid == 31 or columnid == 32 or columnid == 33"> and tvapp_content.tvapp_column_id in (select id from tvapp_column where tvapp_column.parent_id = #{columnid}) </when>
+                <otherwise> and tvapp_content.tvapp_column_id = #{columnid} </otherwise>
+            </choose>
+        </if>
+        <if test="spell != null and spell != ''">
+            and substr(dev_tvappinfo.appspell,1,char_length(#{spell})) = #{spell}
+        </if>
+    </sql>
+    <select id="getColumnVersion" resultType="java.lang.Long">
+      select UNIX_TIMESTAMP(version) as v from tvapp_column_version order by version desc limit 1
+    </select>
+
+    <select id="getColumnListByPid" resultMap="ColumnInfoResultMap" parameterType="java.lang.Integer">
+        select id,title,img from tvapp_column where parent_id = #{parentId} order by id
+    </select>
+    <select id="getRecommendColumn" resultMap="RecommendColumnResultMap">
+      select tvapp_column.id,tvapp_column.title,tvapp_column.img,tvapp_content.tvapp_info_id,dev_tvappinfo.appgetnamefromapp,dev_tvappinfo.appicon,tvapp_content.tag
+      from tvapp_column INNER JOIN tvapp_content on tvapp_content.tvapp_column_id = tvapp_column.id
+      INNER JOIN dev_tvappinfo on dev_tvappinfo.id = tvapp_content.tvapp_info_id
+      INNER JOIN dev_tvapp on dev_tvapp.id = dev_tvappinfo.appid
+      where dev_tvappinfo.appstate = 3 and tvapp_column.id in (13,14,15,16) ORDER BY tvapp_column.id
+    </select>
+    <select id="getContentCount" resultType="java.lang.Integer" parameterType="com.ising99.wkis.parameter.TVAppContentParam">
+        select count(*) as c
+        from dev_tvappinfo
+        <if test="columnid != null and columnid != 0">
+        INNER JOIN tvapp_content on dev_tvappinfo.id = tvapp_content.tvapp_info_id
+        </if>
+        INNER JOIN dev_tvapp on dev_tvapp.id = dev_tvappinfo.appid
+        LEFT JOIN app_type ON dev_tvappinfo.apptype2 = app_type.id
+        where dev_tvappinfo.appstate = 3
+        <include refid="TVContentWhere"/>
+    </select>
+    <select id="getContentList" resultMap="TVContentResultMap" parameterType="com.ising99.wkis.parameter.TVAppContentParam">
+        select
+        dev_tvappinfo.id as
+        app_info_id,dev_tvappinfo.appgetnamefromapp,dev_tvapp.appname,dev_tvappinfo.appicon,dev_tvappinfo.appversion,dev_tvappinfo.downloadcount,app_type.`name`
+        as typename<if test="columnid != null and columnid != 0">,tvapp_content.tag</if>
+        from dev_tvappinfo
+        <if test="columnid != null and columnid != 0">
+        INNER JOIN tvapp_content on dev_tvappinfo.id = tvapp_content.tvapp_info_id
+        </if>
+        INNER JOIN dev_tvapp on dev_tvapp.id = dev_tvappinfo.appid
+        LEFT JOIN app_type ON dev_tvappinfo.apptype2 = app_type.id
+        where dev_tvappinfo.appstate = 3
+        <include refid="TVContentWhere"/>
+        <if test="order == null or order == 0"><!--按上架时间-->
+            order by dev_tvappinfo.createtime DESC
+        </if>
+        <if test="order == 1"><!--按下载量-->
+            order by dev_tvappinfo.downloadcount DESC
+        </if>
+        limit #{pagesize} offset #{offset}
+    </select>
+    <select id="getAppInfo" resultMap="TVAppInfoResultMap" parameterType="java.lang.Integer">
+        select dev_tvappinfo.id,dev_tvapp.appname,dev_tvappinfo.appicon,dev_tvappinfo.appversion,dev_tvappinfo.createtime,dev_tvappinfo.size,
+dev_tvappinfo.downloadcount,dev_tvappinfo.appdesign1,
+dev_tvappinfo.appdesign2,dev_tvappinfo.appdesign3,dev_tvappinfo.appdesign4,dev_tvappinfo.appurl,
+dev_tvappinfo.appresume
+ from dev_tvappinfo INNER JOIN dev_tvapp on dev_tvappinfo.appid = dev_tvapp.id
+where dev_tvappinfo.appstate = 3 and dev_tvappinfo.id = #{appinfoid}
+
+    </select>
+    <select id="getAppVersionInfo" resultMap="TVAppVersionResultMap" parameterType="java.lang.String">
+select dev_tvappinfo.id,dev_tvappinfo.appversion,dev_tvappinfo.downloadcount,dev_tvappinfo.size,dev_tvappinfo.createtime,dev_tvappinfo.appupdateresume,dev_tvappinfo.appicon,dev_tvappinfo.md5,dev_tvappinfo.appurl,dev_tvapp.appname,dev_tvappinfo.appgetnamefromapp
+from dev_tvappinfo INNER JOIN dev_tvapp on dev_tvappinfo.appid = dev_tvapp.id
+where dev_tvappinfo.appstate = 3 and dev_tvappinfo.appgetnamefromapp = #{packagename}
+    </select>
+    <update id="updateDownloadCount" parameterType="java.lang.Integer">
+        update dev_tvappinfo set downloadcount = downloadcount + 1 where appstate = 3 and id = #{appinfoId}
+    </update>
+</mapper>

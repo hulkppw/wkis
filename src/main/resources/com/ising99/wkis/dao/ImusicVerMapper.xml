@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.ImusicVerMapper" >
+  <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.Imusicversion" >
+
+    <result column="version" property="version" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+
+  </resultMap>
+
+    <select id="getVersionInfoByAppId" resultType="java.lang.String" parameterType="map">
+        select version from db_newkoip.t_imusic_version where type = #{type} and language = #{language} order by version desc limit 1
+    </select>
+
+</mapper>

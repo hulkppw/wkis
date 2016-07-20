@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.PKSingerMapper">
+    <resultMap id="SingerInfoResultMap" type="com.ising99.wkis.domain.PKSingerInfo">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="gender" property="gender" jdbcType="INTEGER"/>
+        <result column="birthday" property="birthday" jdbcType="INTEGER"/>
+        <result column="createtime" property="createtime" jdbcType="INTEGER"/>
+        <result column="head_image" property="head" jdbcType="VARCHAR"/>
+        <result column="resources_url" property="resourcesurl" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="SingerSongInfoResultMap" type="com.ising99.wkis.domain.PKSingerSongInfo">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="score" property="score" jdbcType="INTEGER"/>
+        <result column="pk_arena_song_id" property="songid" jdbcType="VARCHAR"/>
+        <result column="song_name" property="songname" jdbcType="VARCHAR"/>
+        <result column="waveform_path" property="waveform_url" jdbcType="VARCHAR"/>
+        <result column="mp3_path" property="mp3_url" jdbcType="VARCHAR"/>
+        <result column="is9_path" property="is9_url" jdbcType="VARCHAR"/>
+        <result column="pk_arena_id" property="arena_id" jdbcType="INTEGER"/>
+        <result column="pk_arena_song_id" property="arena_song_id" jdbcType="INTEGER"/>
+        <result column="singer_id" property="singer_id" jdbcType="INTEGER"/>
+        <result column="pk_singer_head" property="head" jdbcType="VARCHAR"/>
+        <result column="listen_count" property="listen_count" jdbcType="INTEGER"/>
+        <result column="like_count" property="like_count" jdbcType="INTEGER"/>
+        <result column="resources_url" property="resourcesurl" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="SingerSongListResultMap" type="com.ising99.wkis.domain.PKSingerSongList">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="song_name" property="songname" jdbcType="VARCHAR"/>
+        <result column="score" property="score" jdbcType="INTEGER"/>
+        <result column="ranking" property="ranking" jdbcType="INTEGER"/>
+        <result column="listen_count" property="listen_count" jdbcType="INTEGER"/>
+        <result column="like_count" property="like_count" jdbcType="INTEGER"/>
+
+        <result column="pk_arena_song_id" property="arena_song_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap id="SingerBasicResultMap" type="com.ising99.wkis.domain.PKSingerBasic">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="createtime" property="createtime" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap id="SingerMoreResultMap" type="com.ising99.wkis.domain.PKSingerMore"
+               extends="SingerBasicResultMap">
+        <result column="song_count" property="song_count" jdbcType="INTEGER"/>
+        <result column="head" property="head" jdbcType="VARCHAR"/>
+        <result column="resources_url" property="resourcesurl" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="TempSingerResultMap" type="com.ising99.wkis.domain.PKTempSinger">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="userid" property="userid" jdbcType="INTEGER"/>
+        <result column="language" property="language" jdbcType="INTEGER"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap id="CheckUploadResultMap" type="com.ising99.wkis.domain.PKCheckUpload">
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="pk_singer_id" property="pk_singer_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="getSingerInfo" resultMap="SingerInfoResultMap"
+            parameterType="java.lang.Integer">
+        select * from db_newkoip.t_pk_singer where id=#{singerid}
+    </select>
+
+    <select id="getSingerSongInfoById" resultMap="SingerSongInfoResultMap"
+            parameterType="java.lang.Integer">
+        select * from db_newkoip.t_pk_singer_song where id = #{singer_song_id}
+    </select>
+
+    <select id="getSingerSongInfo" resultMap="SingerSongInfoResultMap"
+            parameterType="java.lang.Integer">
+        select * from db_newkoip.t_pk_singer_song where pk_arena_song_id = #{songid}
+    </select>
+
+    <select id="getSingerSongListCount" resultType="java.lang.Integer"
+            parameterType="com.ising99.wkis.parameter.PKSingerSongListParam">
+        select count(*) from db_newkoip.t_pk_singer_song where pk_singer_id = #{singer_id}
+    </select>
+
+    <select id="getSingerSongList" resultMap="SingerSongListResultMap"
+            parameterType="com.ising99.wkis.parameter.PKSingerSongListParam">
+
+            SELECT ID, PK_ARENA_SONG_ID, SONG_NAME, SCORE, LISTEN_COUNT, LIKE_COUNT, CREATETIME,(SELECT COUNT(ID) FROM db_newkoip.t_pk_singer_song AS A WHERE A.SCORE > db_newkoip.t_pk_singer_song.SCORE AND A.PK_ARENA_SONG_ID = db_newkoip.t_pk_singer_song.PK_ARENA_SONG_ID) + 1 AS RANKING
+              FROM db_newkoip.t_pk_singer_song WHERE t_pk_singer_song.PK_SINGER_ID = #{singer_id} AND t_pk_singer_song.SHIELD=0 order by ID limit #{pagesize} offset #{offset}
+    </select>
+
+    <select id="getSingerSongListRank" resultType="java.lang.Integer">
+        select count(*) from db_newkoip.t_pk_singer_song where pk_arena_song_id = #{song_id} and score > #{score}
+    </select>
+
+    <select id="getSingerBasic" resultMap="SingerBasicResultMap"
+            parameterType="com.ising99.wkis.parameter.PKSingerParam">
+        select * from db_newkoip.t_pk_singer where 1 = 1
+        <if test="userid != null and userid != 0">
+            and userid = #{userid}
+        </if>
+        <if test="language != null">
+            and language = #{language}
+        </if>
+    </select>
+
+    <select id="getSingerMore" resultMap="SingerMoreResultMap"
+            parameterType="com.ising99.wkis.parameter.PKSingerParam">
+              select a.id as id,max(a.nickname) as nickname,COUNT(b.pk_arena_song_id) as song_count,max(a.head_image) as head,a.resources_url as resources_url, max(a.createtime) as createtime FROM
+              (SELECT * FROM db_newkoip.t_pk_singer WHERE userid = #{userid} and language=#{language}) as a
+              left join db_newkoip.t_pk_singer_song as b
+              on a.id = b.pk_singer_id GROUP BY a.id;
+    </select>
+
+    <select id="getTempSingerById" resultMap="TempSingerResultMap">
+        select * from db_newkoip.t_pk_temp_singer where id= #{id}
+    </select>
+
+    <update id="updateTempSinger" parameterType="com.ising99.wkis.parameter.PKUpdateTempSingerParam">
+        update db_newkoip.t_pk_temp_singer set status=#{status}, pk_singer_id=#{pk_singer_id} where id=#{id}
+    </update>
+
+    <select id="getCheckUpload" resultMap="CheckUploadResultMap"
+            parameterType="java.lang.String">
+        select * from db_newkoip.t_pk_temp_singer where id = #{tempid}
+    </select>
+
+    <insert id="addSinger" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.ising99.wkis.parameter.PKAddSingerParam">
+        insert into db_newkoip.t_pk_singer (userid,gender,birthday,nickname,resources_url,head_image,createtime,language)
+        values (#{userid},#{gender},#{birthday,jdbcType=TIMESTAMP},#{nickname},#{resourcesUrl},#{head},#{createtime,jdbcType=TIMESTAMP},#{language});
+    </insert>
+
+    <insert id="addSingerSong" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.ising99.wkis.parameter.PKAddSingerSongParam">
+        insert into db_newkoip.t_pk_singer_song (userid,nickname,pk_arena_id,pk_arena_song_id,pk_singer_id,pk_singer_head,pk_gender,song_name,score,resources_url,mp3_path,is9_path,waveform_path,createtime,language,ip) values
+        (#{userid},#{nickname},#{arena_id},#{arena_song_id},#{singer_id},#{singer_head},#{gender},#{song_name},#{score},#{resourcesUrl},#{mp3_path},#{is9_path},#{waveform_path},#{createtime,jdbcType=TIMESTAMP},#{language},#{ip})
+    </insert>
+
+    <delete id="delSinger"
+            parameterType="java.lang.Integer">
+        delete from db_newkoip.t_pk_singer where id = #{singer_id}
+    </delete>
+
+    <delete id="delSingerSong" parameterType="java.lang.Integer">
+        delete from db_newkoip.t_pk_singer_song where pk_singer_id = #{singer_id}
+    </delete>
+
+    <delete id="delSingerSongById" parameterType="java.lang.Integer">
+        delete from db_newkoip.t_pk_singer_song where id = #{singer_songid}
+    </delete>
+
+    <insert id="addListen" parameterType="com.ising99.wkis.parameter.PKListenParam">
+        insert into db_newkoip.t_pk_listen_record (pk_singer_id, pk_singer_song_id, listener_ip, listener_singer_id, listener_user_id, createtime)
+        values (#{singer_id}, #{singer_song_id}, #{ip}, #{listener_singer_id}, #{listener_user_id}, #{createtime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <update id="updateListenCount" parameterType="java.lang.Integer">
+        update db_newkoip.t_pk_singer_song set listen_count = (listen_count + 1) where id=#{singer_song_id}
+    </update>
+
+    <insert id="addLike" parameterType="com.ising99.wkis.parameter.PKLikeParam">
+        insert into db_newkoip.t_pk_like_record (pk_singer_id, pk_singer_song_id, sender_ip, sender_singer_id, sender_user_id, createtime)
+        values (#{singer_id}, #{singer_song_id}, #{sender_ip}, #{sender_singer_id}, #{sender_user_id}, #{createtime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <select id="getLikeCount" resultType="java.lang.Integer"
+            parameterType="com.ising99.wkis.parameter.PKLikeParam">
+        select count(*) from db_newkoip.t_pk_like_record where pk_singer_id = #{singer_id} and pk_singer_song_id = #{singer_song_id} and sender_singer_id = #{sender_singer_id}
+    </select>
+
+    <update id="updateLikeCount" parameterType="java.lang.Integer">
+        update db_newkoip.t_pk_singer_song set like_count = (like_count + 1) where id=#{singer_song_id}
+    </update>
+
+    <update id="updateSingerHead" parameterType="com.ising99.wkis.parameter.PKUpdateSingerHeadParam">
+        update db_newkoip.t_pk_singer set head_image = #{head_image},resources_url = #{resourcesUrl} where id = #{singerid}
+    </update>
+
+    <insert id="addCancelUpload"
+            parameterType="com.ising99.wkis.domain.CancelUpload">
+        insert into db_newkoip.t_pk_cancel_upload (tempid) values (#{tempid});
+    </insert>
+    <delete id="delSingerByTempId"
+            parameterType="java.lang.String">
+        delete from db_newkoip.t_pk_singer where tempid = #{temp_id}
+    </delete>
+
+</mapper>

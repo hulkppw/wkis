@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.ImusicBgMapper" >
+  <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.ImusicBg" >
+
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="small_img" property="smallimg" jdbcType="VARCHAR" />
+    <result column="big_img" property="bigimg" jdbcType="VARCHAR" />
+  </resultMap>
+
+    <select id="getBgList" resultMap="BaseResultMap">
+        select * from db_newkoip.t_imusic_bg_img  order by id
+    </select>
+
+</mapper>

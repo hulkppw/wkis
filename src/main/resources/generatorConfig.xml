@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <classPathEntry location="D:\MyWork\JAVA\iSing99KOIPServer\trunk\lib\mysql-connector-java-5.1.10-bin.jar"/>
+
+    <context id="MySqlTables" targetRuntime="MyBatis3">
+<!--119.161.222.110-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://119.161.222.110:3306/ott?characterEncoding=utf-8"
+                        userId="root"
+                        password="ising99.com">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- generate Model -->
+        <javaModelGenerator targetPackage="com.ising99.wkis.domain" targetProject="D:\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- generate xml -->
+        <sqlMapGenerator targetPackage="com.ising99.wkis.dao" targetProject="D:\src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- generate Mapper -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ising99.wkis.dao" targetProject="D:\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <table schema="" tableName="dev_tvappinfo" domainObjectName="TVAppInfo"></table>
+
+    </context>
+</generatorConfiguration>

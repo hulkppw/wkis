@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.TmsFavoriteMapper" >
+  <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.TmsFavorite" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="song_id" property="song_id" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="singer" property="singer" jdbcType="VARCHAR" />
+    <result column="singer_id" property="singer_id" jdbcType="VARCHAR" />
+    <result column="is_on" property="is_on" jdbcType="BOOLEAN" />
+    <result column="is_is9" property="is_is9" jdbcType="BOOLEAN" />
+    <result column="singertype" property="singertype" jdbcType="INTEGER" />
+    <result column="languagecode" property="languagecode" jdbcType="INTEGER" />
+    <result column="spell" property="spell" jdbcType="VARCHAR" />
+    <result column="scene1" property="scene1" jdbcType="INTEGER" />
+    <result column="scene2" property="scene2" jdbcType="INTEGER" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="language" property="language" jdbcType="INTEGER" />
+  </resultMap>
+  <!--
+获取我的收藏列表
+-->
+  <select id="getList" resultMap="BaseResultMap" parameterType="com.ising99.wkis.parameter.TmsFavoriteParam">
+    select * from db_newkoip.t_ms_favorite  where userid=#{userid} and language=#{language} order by id desc limit #{pagesize} offset #{offset}
+  </select>
+  <!--
+获取我的收藏列表数量
+-->
+  <select id="getCount" resultType="java.lang.Integer" parameterType="com.ising99.wkis.parameter.TmsFavoriteParam">
+    select count(*) as c from db_newkoip.t_ms_favorite where userid=#{userid} and language=#{language}
+  </select>
+  <insert id="insert" parameterType="com.ising99.wkis.domain.TmsFavorite">
+
+    insert into  db_newkoip.t_ms_favorite (userid,song_id,name, singer,singer_id,is_is9,singertype,languagecode,spell,createtime,`language`)
+    values (#{userid,jdbcType=INTEGER},#{song_id,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR},#{singer,jdbcType=VARCHAR},#{singer_id,jdbcType=VARCHAR},#{is_is9,jdbcType=BOOLEAN},#{singertype,jdbcType=INTEGER},#{languagecode,jdbcType=INTEGER},#{spell,jdbcType=VARCHAR},#{createtime,jdbcType=DATE},#{language,jdbcType=INTEGER})
+  </insert>
+  <delete id="delete">
+    delete from db_newkoip.t_ms_favorite where id=#{0} and userid=#{1}
+  </delete>
+
+</mapper>

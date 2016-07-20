@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>获取歌单</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css" media="screen">
+</head>
+<body class="mediawiki ltr sitedir-ltr B_wiki_main  skin-monobook">
+
+
+<!--主内容开始-->
+<div class="wiki_wrap">
+<div class="wiki_con">
+<div class="con_box">
+
+<div class="wiki_body">
+<div class="wiki_inner">
+<div class="main_content clearfix">
+
+<div class="wiki_bodyContent" id="bodyContent">
+<div id="mw-js-message" class="js-messagebox" style="display:none"></div>
+<h1 id="firstHeading" class="firstHeading">musiclist</h1>
+
+
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2 class="wiki_title">
+    <span class="mw-headline" id="statuses.2Frepost_timeline">musiclist</span>
+</h2>
+
+<p>获取歌单
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline" id="URL">URL</span></h2>
+
+<p><span style="text-transform:lowercase;font-weight:600">
+    <a rel="nofollow" class="external free" href="#">http://xxx/musiclist</a>
+</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">支持格式</span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">JSON</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">HTTP请求方式</span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">GET</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">是否需要登录</span></h2>
+
+<p><span style="text-transform:lowercase;font-weight:600">否</span><br>
+
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">请求参数</span></h2>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters"
+       style="border-color: #CCCCCC;">
+
+    <tbody>
+    <tr>
+        <th width="10%" style="text-align:center;font-weight:bolder;border:1px solid #cccccc">&nbsp;
+        </th>
+        <th width="5%" style="text-align:center;font-weight:bolder;border:1px solid #cccccc">必选
+        </th>
+        <th width="10%" style="text-align:center;font-weight:bolder;border:1px solid #cccccc">类型及范围
+        </th>
+        <th width="75%" style="text-align:center;font-weight:bolder;border:1px solid #cccccc">说明
+        </th>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">language
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            返回数据的语言类型（0：简体中文，1：繁体中文）
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">pageindex
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            请求页码（从1开始）
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">pagesize
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            每页数据条数
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">type
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            歌曲分类 0：全部查询 ,1:金曲排行,
+            * 2:体验试唱,3:情歌,4:民歌,5:怀旧,6:舞曲,7:Rap,8:校园,9:本月上架,10:本月劲榜,11:最新上传
+            * ,12
+            * :儿歌,13:可录增值,14:体验曲库,15:红歌,16:老歌,17:流行,18:人生导唱,19:欢乐节庆,20:周杰伦
+            * ,21:邓丽君,
+            * 22:刘德华,23:情歌KODII,24:经典老歌KODII,25:流行歌曲KODII,26:中国好声音（第一季
+            * ）,27:中国好声音（第二季）,28:国庆歌曲,29:中秋节歌曲,30:深情对唱,31:发烧话题
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">stroke
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            格式例如：“1”、“1-”或“1-2”， 歌曲首字笔划，指定范围查找
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">address
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            歌曲地区 1台灣, 2香港, 3內地, 4亞州,馬來西亞, 新加坡, 日本,韩国,泰国 5歐美, 0:全部
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">singerid
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            歌手编号 为空查全部
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">words
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            格式例如：“1”、“1-”或“1-2”，歌曲字数，指定范围查找
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">spell
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            歌名拼音 为空查全部
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">languagecode
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            语言类别 1:國語,2:台語,3:粵語,4:韓語,5:日語,6:英語,7:其他語種,8:客语,9:儿语 ,0:全部
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">order
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            排序 0：更新，1：热度
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">name
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            歌名搜索 为空查全部
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">isis9
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            搜索是否有人声的歌曲 0：没有人声 1：有人声 2：全部
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">songid
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            歌单编号
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">firstword
+        </td>
+        <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            歌曲首字，可以是单字，也可以是多字
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h2 class="wiki_title"><span class="mw-headline">注意事项</span></h2>
+<ul>
+    <li>无
+    </li>
+</ul>
+
+
+<h2 class="wiki_title"><span class="mw-headline">返回结果 </span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">JSON示例</span><br>
+</p>
+<pre>
+{
+    "pagecount":"1",
+    "recordcount":"12",
+    "list": [
+    {
+        "language":1,
+        "singerid":"I321",
+        "singer":"刘德华",
+        "singertype":1,
+        "id":"12345",
+        "name":"爱你一万年",
+        "isis9":1,
+        "spell":"ANYWN",
+        "s1":1,
+        "s2":2
+    },
+    {
+       "language":1,
+        "singerid":"I321",
+        "singer":"刘德华",
+        "singertype":1,
+        "id":"12345",
+        "name":"爱你一万年",
+        "isis9":1,
+        "spell":"ANYWN",
+        "s1":1,
+        "s2":2
+    },
+    ...
+]}
+</pre>
+<br>
+
+<p>关于错误返回值与错误代码，参见 <a href="http://open.weibo.com/wiki/Error_code" title="Error code">错误代码说明</a>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">返回字段说明</span></h2>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters"
+       style="border-color: #CCCCCC;">
+
+    <tbody>
+    <tr>
+        <th width="25%"
+            style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">
+            返回值字段
+        </th>
+        <th width="15%"
+            style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">
+            字段类型
+        </th>
+        <th width="60%"
+            style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">
+            字段说明
+        </th>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">pagecount
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">总页数
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">recordcount
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">总记录数
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">language
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">歌曲所属语言
+            1:國語,2:台語,3:粵語,4:韓語,5:日語,6:英語,7:其他語種,8:客语,9:儿语 ,0:全部
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">singerid
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">歌手编号
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">singer
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">歌手名称
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">singertype
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">
+            歌手类型（1男歌手，2女歌手，3乐团组合，4男女合唱，5女女合唱，6男男合唱，7其它）
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">id
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">歌曲编号
+        </td>
+    </tr>
+
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">name
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">歌曲名称
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">isis9
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">人声导唱 1：有,0:无
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">spell
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">歌曲拼音
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">s1
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">获取主情景
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">s2
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int32
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">获取二级情景
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h2 class="wiki_title"><span class="mw-headline">测试</span></h2>
+<script type="text/javascript">
+    function test() {
+        var apiUrl = document.getElementById("api_url").value;
+
+        var language = document.getElementById("language").value;
+        var pageindex = document.getElementById("txt_pageindex").value;
+        var pagesize = document.getElementById("txt_pagesize").value;
+        var type = document.getElementById("type").value;
+        var stroke = document.getElementById("txt_stroke").value;
+        var address = document.getElementById("address").value;
+        var singerid = document.getElementById("txt_singerid").value;
+        var words = document.getElementById("txt_words").value;
+        var spell = document.getElementById("txt_spell").value;
+        var languagecode = document.getElementById("languagecode").value;
+        var order = document.getElementById("order").value;
+        var name = document.getElementById("txt_name").value;
+        var isis9 = document.getElementById("isis9").value;
+        var songid = document.getElementById("txt_songid").value;
+        var firstword = document.getElementById("txt_firstword").value;
+
+
+        apiUrl = apiUrl + "?language=" + language
+                + "&pageindex=" + pageindex
+                + "&pagesize=" + pagesize
+                + "&type=" + type
+                + "&stroke=" + stroke
+                + "&address=" + address
+                + "&singerid=" + singerid
+                + "&words=" + words
+                + "&spell=" + spell
+                + "&languagecode=" + languagecode
+                + "&order=" + order
+                + "&name=" + name
+                + "&isis9=" + isis9
+                + "&songid=" + songid
+                + "&firstword=" + firstword
+                + "&t=" + new Date().getTime();
+        document.getElementById("result").src = apiUrl;
+    }
+</script>
+<p>url:<input type="text" id="api_url" value="http://118.244.195.149/wkds/musiclist"> <input type="button" value="测试" onclick="test()">
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters"
+       style="border-color: #CCCCCC;">
+    <tbody>
+    <tr>
+        <th width="10%" class="t_cell">参数名称
+        </th>
+        <th width="15%" class="t_cell">参数值
+        </th>
+        <th width="75%" class="t_cell">结果
+        </th>
+    </tr>
+    <tr>
+        <td class="t_cell">language
+        </td>
+        <td class="t_cell_c">
+            <select id="language">
+                <option selected="selected" value="0">简体中文</option>
+                <option value="1">繁体中文</option>　
+            </select>
+        </td>
+        <td class="t_cell_l" rowspan="15"> <iframe id="result" frameborder="0" width="100%" height="100%" scrolling="1"></iframe>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="t_cell">pageindex
+        </td>
+        <td class="t_cell_c"><input type="text" id="txt_pageindex" value="1">
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">pagesize
+        </td>
+        <td class="t_cell_c"><input type="text" id="txt_pagesize" value="20">
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">type
+        </td>
+        <td class="t_cell_c"><select id="type">
+            <option selected="selected" value="0">全部</option>
+            <option value="1">金曲排行</option>
+            <option value="2">体验试唱</option>
+            <option value="3">情歌</option>
+            <option value="4">民歌</option>
+            <option value="5">怀旧</option>
+            <option value="6">舞曲</option>
+            <option value="7">Rap</option>
+            <option value="8">校园</option>
+            <option value="9">本月上架</option>
+            <option value="10">本月劲榜</option>
+            <option value="11">最新上传</option>
+            <option value="12">儿歌</option>
+            <option value="13">可录增值</option>
+            <option value="14">体验曲库</option>
+            <option value="15">红歌</option>
+            <option value="16">老歌</option>
+            <option value="17">流行</option>
+            <option value="18">人生导唱</option>
+            <option value="19">欢乐节庆</option>
+            <option value="20">周杰伦</option>
+            <option value="21">邓丽君</option>
+            <option value="22">刘德华</option>
+            <option value="23">情歌KODII</option>
+            <option value="24">经典老歌KODII</option>
+            <option value="25">流行歌曲KODII</option>
+            <option value="26">中国好声音（第一季</option>
+            <option value="27">中国好声音（第二季</option>
+            <option value="28">国庆歌曲</option>
+            <option value="29">中秋节歌曲</option>
+            <option value="30">深情对唱</option>
+            <option value="31">发烧话题</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">stroke
+        </td>
+        <td class="t_cell_c"><input type="text" id="txt_stroke"> 格式例如：“1”、“1-”或“1-2”， 歌曲首字笔划，指定范围查找
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">address
+        </td>
+        <td class="t_cell_c"><select id="address">
+            <option selected="selected" value="0">全部</option>
+            <option value="1">台湾</option>
+            <option value="2">香港</option>
+            <option value="3">内地</option>
+            <option value="4">亚洲,馬來西亞, 新加坡, 日本,韩国,泰国</option>
+            <option value="5">欧美</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">singerid
+        </td>
+        <td class="t_cell_c"><input type="text" id="txt_singerid">
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">words
+        </td>
+        <td class="t_cell_c"><input type="text" id="txt_words">  格式例如：“1”、“1-”或“1-2”，歌曲字数，指定范围查找
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">spell
+        </td>
+        <td class="t_cell_c"><input type="text" id="txt_spell">
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">languagecode
+        </td>
+        <td class="t_cell_c"><select id="languagecode">
+            <option selected="selected" value="0">全部</option>
+            <option value="1">国语</option>
+            <option value="2">台语</option>
+            <option value="3">粤语</option>
+            <option value="4">韩语</option>
+            <option value="5">日语</option>
+            <option value="6">英语</option>
+            <option value="7">其他</option>
+            <option value="8">客家语</option>
+            <option value="9">儿语</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">order
+        </td>
+        <td class="t_cell_c"><select id="order">
+            <option selected="selected" value="0">更新时间</option>
+            <option value="1">热度</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">name
+        </td>
+        <td class="t_cell_c"><input type="text" id="txt_name">
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">isis9
+        </td>
+        <td class="t_cell_c"> <select id="isis9">
+            <option selected="selected" value="2">全部</option>
+            <option value="0">没有人声</option>
+            <option value="1">人声</option>　　
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">songid
+        </td>
+        <td class="t_cell_c"><input type="text" id="txt_songid">
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">firstword
+        </td>
+        <td class="t_cell_c"><input type="text" id="txt_firstword">
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h2 class="wiki_title"><span class="mw-headline">其他</span></h2>
+
+<p>无
+</p>
+
+<span style="display:none;"><div class="wiki_plus_area"><span class="tit">Language:</span> [[{{{2/uri}}}|中文]]
+</div></span>
+
+</div>
+
+<div id="catlinks" class="catlinks catlinks-allhidden"></div>
+<div class="wiki_plus_area"> 文档更新时间: 2013-07-02</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--/主内容开始-->
+
+
+</body>
+</html>

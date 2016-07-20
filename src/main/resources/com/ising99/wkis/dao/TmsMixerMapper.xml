@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.TmsMixerMapper" >
+  <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.TmsMixer" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="main_volume" property="main_volume" jdbcType="INTEGER" />
+    <result column="music_volume" property="music_volume" jdbcType="INTEGER" />
+    <result column="microphone_volume" property="microphone_volume" jdbcType="INTEGER" />
+    <result column="microphone_echo_volume" property="microphone_echo_volume" jdbcType="INTEGER" />
+    <result column="melody_volume" property="melody_volume" jdbcType="INTEGER" />
+    <result column="tempo" property="tempo" jdbcType="INTEGER" />
+    <result column="key" property="key" jdbcType="INTEGER" />
+    <result column="micset_room_mode" property="micset_room_mode" jdbcType="INTEGER" />
+    <result column="modifytime" property="modifytime" jdbcType="TIMESTAMP" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <select id="getMixer" resultMap="BaseResultMap">
+    select * from db_newkoip.t_ms_mixer  where userid=#{userid}
+  </select>
+  <select id="selectById" resultMap="BaseResultMap">
+    select * from db_newkoip.t_ms_mixer where id=#{id}
+  </select>
+  <update id="update" parameterType="com.ising99.wkis.domain.TmsMixer">
+    update db_newkoip.t_ms_mixer set id=#{id},userid=#{userid},main_volume=#{main_volume},music_volume=#{music_volume},microphone_volume=#{microphone_volume},microphone_echo_volume=#{microphone_echo_volume},melody_volume=#{melody_volume},tempo=#{tempo},`key`=#{key},micset_room_mode=#{micset_room_mode},modifytime=#{modifytime},createtime=#{createtime} where id=#{id}
+  </update>
+</mapper>

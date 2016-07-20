@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>获取我的调音台信息</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css" media="screen">
+</head>
+<body class="mediawiki ltr sitedir-ltr B_wiki_main  skin-monobook">
+
+
+<!--主内容开始-->
+<div class="wiki_wrap">
+<div class="wiki_con">
+<div class="con_box">
+
+<div class="wiki_body">
+<div class="wiki_inner">
+<div class="main_content clearfix">
+
+<div class="wiki_bodyContent" id="bodyContent">
+<div id="mw-js-message" class="js-messagebox" style="display:none"></div>
+<h1 id="firstHeading" class="firstHeading">multiscreen/mixer</h1>
+
+
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2 class="wiki_title">
+    <span class="mw-headline" id="statuses.2Frepost_timeline">multiscreen/mixer</span>
+</h2>
+
+<p>获取我的调音台信息
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline" id="URL">URL</span></h2>
+
+<p><span style="text-transform:lowercase;font-weight:600">
+    <a rel="nofollow" class="external free" href="#">http://xxx/multiscreen/mixer</a>
+</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">支持格式</span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">JSON</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">HTTP请求方式</span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">GET</span>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">是否需要登录</span></h2>
+
+<p><span style="text-transform:lowercase;font-weight:600">是</span><br>
+
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">请求参数</span></h2>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters"
+       style="border-color: #CCCCCC;">
+
+    <tbody>
+    <tr>
+        <th width="10%" class="t_cell" >&nbsp;
+        </th>
+        <th width="5%" class="t_cell">必选
+        </th>
+        <th width="10%" class="t_cell">类型及范围
+        </th>
+        <th width="75%" class="t_cell">说明
+        </th>
+    </tr>
+    <tr>
+        <td class="t_cell">session
+        </td>
+        <td class="t_cell_c">true
+        </td>
+        <td class="t_cell_l">string
+        </td>
+        <td class="t_cell_l">
+            session
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h2 class="wiki_title"><span class="mw-headline">注意事项</span></h2>
+<ul>
+    <li>无
+    </li>
+</ul>
+
+
+<h2 class="wiki_title"><span class="mw-headline">返回结果 </span></h2>
+
+<p><span style="text-transform:uppercase;font-weight:600">JSON示例</span><br>
+</p>
+<pre>
+{
+    "main_volume":56,
+    "music_volume":20,
+    "microphone_volume":56,
+    "microphone_echo_volume":23,
+    "melody_volume":2,
+    "tempo":2,
+    "key":1,
+    "micset_room_mode":0
+}
+</pre>
+<br>
+
+<p>关于错误返回值与错误代码，参见 <a href="http://open.weibo.com/wiki/Error_code" title="Error code">错误代码说明</a>
+</p>
+
+<h2 class="wiki_title"><span class="mw-headline">返回字段说明</span></h2>
+<table border="1" cellspacing="0" cellpadding="0" width="100%" class="parameters"
+       style="border-color: #CCCCCC;">
+
+    <tbody>
+    <tr>
+        <th width="25%"
+            class="t_cell">
+            返回值字段
+        </th>
+        <th width="15%"
+            class="t_cell">
+            字段类型
+        </th>
+        <th width="60%"
+            class="t_cell">
+            字段说明
+        </th>
+    </tr>
+    <tr>
+        <td class="t_cell">main_volume
+        </td>
+        <td class="t_cell_c">int32
+        </td>
+        <td class="t_cell_l">总音量
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">music_volume
+        </td>
+        <td class="t_cell_c">int32
+        </td>
+        <td class="t_cell_l">伴奏
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">microphone_volume
+        </td>
+        <td class="t_cell_c">int32
+        </td>
+        <td class="t_cell_l">麦克风
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">microphone_echo_volume
+        </td>
+        <td class="t_cell_c">int32
+        </td>
+        <td class="t_cell_l">回音
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">melody_volume
+        </td>
+        <td class="t_cell_c">int32
+        </td>
+        <td class="t_cell_l">导唱
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">tempo
+        </td>
+        <td class="t_cell_c">int32
+        </td>
+        <td class="t_cell_l">曲速
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">key
+        </td>
+        <td class="t_cell_c">int32
+        </td>
+        <td class="t_cell_l">音调
+        </td>
+    </tr>
+    <tr>
+        <td class="t_cell">micset_room_mode
+        </td>
+        <td class="t_cell_c">int32
+        </td>
+        <td class="t_cell_l">音场
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h2 class="wiki_title"><span class="mw-headline">其他</span></h2>
+
+<p>无
+</p>
+
+<span style="display:none;"><div class="wiki_plus_area"><span class="tit">Language:</span> [[{{{2/uri}}}|中文]]
+</div></span>
+
+</div>
+
+<div id="catlinks" class="catlinks catlinks-allhidden"></div>
+<div class="wiki_plus_area"> 文档更新时间: 2015-01-08</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--/主内容开始-->
+
+
+</body>
+</html>

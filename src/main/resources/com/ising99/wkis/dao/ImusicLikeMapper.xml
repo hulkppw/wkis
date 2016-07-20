@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ising99.wkis.dao.ImusicLikeMapper" >
+  <resultMap id="BaseResultMap" type="com.ising99.wkis.domain.ImusicLike" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="song_id" property="songid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="singer" property="singer" jdbcType="VARCHAR" />
+    <result column="singer_id" property="singerid" jdbcType="VARCHAR" />
+    <result column="is_is9" property="isis9" jdbcType="BIT" />
+    <result column="is_on" property="ison" jdbcType="BIT" />
+    <result column="img" property="img" jdbcType="VARCHAR" />
+
+  </resultMap>
+    <!--
+获取随意听喜欢歌曲列表
+-->
+    <select id="getList" resultMap="BaseResultMap" parameterType="com.ising99.wkis.parameter.ImusicLikeParam">
+        select id, song_id, name, singer, singer_id, is_is9,img from db_newkoip.t_imusic_music_like where user_id = #{userid} and language = #{language} order by id desc
+        limit #{pagesize} offset #{offset}
+    </select>
+    <!--
+获取随意听喜欢歌曲列表数量
+-->
+    <select id="getCount" resultType="java.lang.Integer" parameterType="com.ising99.wkis.parameter.ImusicLikeParam">
+        select count(*) as c
+        from db_newkoip.t_imusic_music_like where user_id = #{userid} and language = #{language}
+    </select>
+
+    <!-- 添加随意听喜欢歌曲 -->
+    <insert id="add" parameterType="com.ising99.wkis.parameter.ImusicMusicAddParam" >
+        INSERT INTO db_newkoip.t_imusic_music_like(user_id,song_id,`name`,singer,singer_id,is_on,is_is9,img,createtime,`language`)
+        select #{userid},song_id,`name`,singer,singer_id,1,is_is9,img,NOW(),`language` from db_newkoip.t_imusic_channel_music
+        where channel_id = #{channelId} and song_id = #{songId} and language = #{language}
+    </insert>
+
+    <!-- 删除随意听喜欢歌曲 -->
+    <delete id="delete" parameterType="com.ising99.wkis.parameter.ImusicLikeParam" >
+        delete from db_newkoip.t_imusic_music_like where  song_id = #{songid} and user_id = #{userid} and language = #{language}
+    </delete>
+</mapper>
